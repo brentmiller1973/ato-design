@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc -->
+<html lang="en-US">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style type="text/css">.turbo-progress-bar {
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: #0076ff;
+        z-index: 2147483647;
+        transition: width 300ms ease-out,
+        opacity 150ms 150ms ease-in;
+        transform: translate3d(0, 0, 0);
+    }
+    </style>
+    <title>Management Portal</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="csrf-param" content="authenticity_token">
+
+
+    <link rel="stylesheet"
+          href="./Management Portal_files/tailwind-5416e8d1e29c995618d98a14f8e83d71599a5446158e91512620c1bf7d9527d9.css"
+          data-turbo-track="reload">
+    <link rel="stylesheet"
+          href="./Management Portal_files/inter-font-8c3e82affb176f4bca9616b838d906343d1251adc8408efe02cf2b1e4fcf2bc4.css"
+          data-turbo-track="reload">
+
+    <link rel="stylesheet"
+          href="./Management Portal_files/application-b17d69807c092e26fbac52b70a55dd5a2a8f44866de7e04a4758a83edb47dfab.css"
+          data-turbo-track="reload">
+
+    <link rel="stylesheet"
+          href="../../resources/new_tailwind_defs.css"
+          data-turbo-track="reload">
+
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-e639a16d8a06f13020cba528a8333bc0422027d76eb4c683210052276a8e63db.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-918a6cf2f2be8ed9555c9a11eee69c7dc2f01770802815576efc931876b327fb.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-dd364f16ec9504dfb72672295637a1c8838773b01c0b441bd41008124c407894.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "chart.js": "https://cdn.jsdelivr.net/npm/chart.js",
+    "leaflet": "https://ga.jspm.io/npm:leaflet@1.9.4/dist/leaflet-src.js",
+    "@rails/actioncable": "/assets/actioncable.esm-06609b0ecaffe2ab952021b9c8df8b6c68f65fc23bee728fc678a2605e1ce132.js",
+    "local-time": "https://ga.jspm.io/npm:local-time@2.1.0/app/assets/javascripts/local-time.js",
+    "controllers/application": "/assets/controllers/application-1d683f41d4d296a53045dcbea61c280504a22ace3f29f543398a9831f0f2c8a2.js",
+    "controllers/application_controller": "/assets/controllers/application_controller-c267a2121cbf83dafa40629feb891c568b1869182d9c4522e35952fae43912e6.js",
+    "controllers/clipboard_controller": "/assets/controllers/clipboard_controller-c268bfb93e024f7e390d6c280c830accc65ee7a486b4906e4bfb2bfd46bc2d14.js",
+    "controllers/domain_controller": "/assets/controllers/domain_controller-fcdd86159afaad84302ea4cf16794c7ac61474586be8f023522739e620afe538.js",
+    "controllers/filter_controller": "/assets/controllers/filter_controller-cbf2fbd77eda9e8d6441995e0e166b56466ea6fdb5e186a780ad6f57c5cf536a.js",
+    "controllers/flyout_component_controller": "/assets/controllers/flyout_component_controller-7541f01e83472a81123af558d77c75d95892e6b62f5295a37b42f132d7202a62.js",
+    "controllers/form_saver_controller": "/assets/controllers/form_saver_controller-9f38487bdacd0fb75e6997049c7cab9cdadd13b2ab54d349c92162cab17afa44.js",
+    "controllers": "/assets/controllers/index-44fd863acb73f17d1baf7c745aabb69a3b58a75305b6361d2839b2a4229aa1a5.js",
+    "controllers/journey_builder_controller": "/assets/controllers/journey_builder_controller-72ee5c269b0cf08f345963e04d3da0a46166e0d4ff9575de24db642a605c3a2c.js",
+    "controllers/js_controller": "/assets/controllers/js_controller-cdf806e3424173454017ab2774f8bf0849e56690650bbbd828eafdd7fe2417c7.js",
+    "controllers/nav_controller": "/assets/controllers/nav_controller-bf7b15c65b8cb91e88b696961c925c23a2efe7c73d9f0dc34c9781817e31c44b.js",
+    "controllers/oidc_settings_controller": "/assets/controllers/oidc_settings_controller-dbe7b833deafe44067f97db84178d8295e7224928e5a763ffcda14ebd2360bed.js",
+    "controllers/proxy_settings_controller": "/assets/controllers/proxy_settings_controller-e3d83c159bbf199f0b38cc7368d9e8025dacb7049f393fb92cce5d24d52a6785.js",
+    "controllers/realtime_analytics_controller": "/assets/controllers/realtime_analytics_controller-bfa3a42ab6b4a245c8af658156e4b02788322d403840a7ec304f41c4a4a03e2b.js",
+    "controllers/realtime_graph_controller": "/assets/controllers/realtime_graph_controller-5085f3fdc16b48004e5d72ade8a07551e4aa4ed1a080dc8c00dd1fe8edf556b9.js",
+    "controllers/sdk_mode_controller": "/assets/controllers/sdk_mode_controller-6df63a7cd76b6a736ce8b152e044f4467eb70cacf1e9f90eeeff5ddd9d76214d.js",
+    "controllers/sms_form_controller": "/assets/controllers/sms_form_controller-8e01714412ab391eca48912b30274a91847d5d8a441df360edd75def1d21c60a.js",
+    "controllers/sub_nav_controller": "/assets/controllers/sub_nav_controller-0a1d69b2a1a69aa813334f11a8c2a43fc0c35d9c5da9af22c9d17e0cb7d77961.js",
+    "controllers/tenant_settings_controller": "/assets/controllers/tenant_settings_controller-86a90c57ab6973e13c0dd81c1e18979e6e6fe9ab915615ff41ac655fa1e1e6ad.js",
+    "controllers/user_activity_controller": "/assets/controllers/user_activity_controller-10921a84f34383a346a786a647eae69a59b5d118ad7a1a7c04c126fb619b643c.js",
+    "controllers/verification_map_controller": "/assets/controllers/verification_map_controller-5f399aea9b5da9b6cf77feb1d543a61d397b3b2294baa1928d77cc0064d77fbf.js",
+    "channels/consumer": "/assets/channels/consumer-0bce36d768c65bb7d0c23e626e6f08fa2a9dbf80190e5e9c9daea124fda71480.js",
+    "channels": "/assets/channels/index-fedc024d82e61a5714f0fc00ce6339c7d16b471e49336059c3687b7a8e9df9dd.js",
+    "channels/user_context_channel": "/assets/channels/user_context_channel-bf93c044881e555b1534ea2fff6c1fe7d7a88ed8eb350f58ec6a0bfe3a5a55a1.js"
+  }
+}
+    </script>
+
+    <script type="module">import "application"</script>
+
+    <link rel="stylesheet" href="./Management Portal_files/boxicons.min.css">
+    <style> @import url('https://fonts.cdnfonts.com/css/sofia-pro'); </style>
+
+
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="https://portal.staging.trusona.com/assets/favicon/apple-touch-icon-28c125dbc9a565896f7bc51fb49c4f56fd1513ea252e000beb9299e3802dd9eb.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="https://portal.staging.trusona.com/assets/favicon/favicon-32x32-db1e86fe7ea0888c64e05c4d7406a5dd46f63cce6e87f9b5a804282951966ab5.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="https://portal.staging.trusona.com/assets/favicon/favicon-16x16-5808d1d16557ff9c16d513906990a5e96b98b19d4dc376bc9d2fd8429d722e96.png">
+    <link rel="manifest"
+          href="https://portal.staging.trusona.com/assets/favicon/site.webmanifest-d65f693051f1600af3a3f42c04e87fdf99b8010bca3207f7cae1329973451df0.erb">
+    <link rel="mask-icon"
+          href="https://portal.staging.trusona.com/assets/favicon/safari-pinned-tab-d2004b7ee5a08ea60522ee70e2f380e05bfec71f733fa6260e939bd50a08f996.svg"
+          color="#5bbad5">
+    <link rel="shortcut icon"
+          href="https://portal.staging.trusona.com/assets/favicon/favicon-6a1a5e6f94e667df486d1beb6b3323f066ecc56e6a186a7e413e3d109b9d5678.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config"
+          content="/assets/favicon/browserconfig-3c267d2b6ed5b4449dc1a37eb61ae6d291fb5e32c0ef0a5c2f59cebc72627b31.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="./Management Portal_files/leaflet.css">
+    <meta name="csrf-token"
+          content="dAYUkPJpdxMedLucBfCd9EPk5vV3-UQ-1AhAda1y26L-YWeuAriav4CSpg2txLubmrBalJuUhljV6uVk2SxSDw">
+    <script type="module">import "leaflet"</script>
+</head>
+
+<body class="h-full bg-tilt font-sofia text-ferrite" data-controller="js"
+      data-user-context-id="4ce05438-ddc8-4af3-8d4f-034500c09380" data-js-loaded-value="true">
+
+<div data-controller="nav " data-proxy-settings-config-value="null" data-oidc-settings-oidc-config-value="null"
+     data-sdk-mode-errors-value="null" data-form-saver-errors-value="{}" data-action="
+        show-save-ui@window-&gt;form-saver#showSaveUI
+        hide-save-ui@window-&gt;form-saver#hideSaveUI
+        form-invalid@window-&gt;form-saver#formInvalid
+        prevent-form-submission@window-&gt;oidc-settings#preventFormSubmission
+        prevent-form-submission@window-&gt;settings#preventFormSubmission
+      ">
+    <div class="relative z-40 hidden" role="dialog" aria-modal="true" data-nav-target="mobileSidebar">
+        <div data-nav-target="mobileSidebarBackdrop"
+             class="transition-opacity ease-linear duration-300 opacity-0 fixed inset-0 "></div>
+
+        <div class="fixed inset-0 flex z-40">
+            <div data-nav-target="mobileSidebarMenu"
+                 class="shadow-md bg-tilt transition ease-in-out duration-300 transform -translate-x-full relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 ">
+                <div data-nav-target="mobileSidebarCloseButton"
+                     class="ease-in-out duration-300 opacity-0 absolute top-0 right-0 -mr-12 pt-2">
+                    <button type="button" data-action="click-&gt;nav#closeMobileSidebar"
+                            class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                        <span class="sr-only">Close sidebar</span>
+                        <!-- Heroicon name: outline/x -->
+                        <svg class="h-6 w-6 " xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                             stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="flex-shrink-0 flex items-center px-4">
+                    <img src="./Management Portal_files/trusona-logo-2df15ba4b8910bac3dfe54e58cd068e04ba997c544b53b86d4c36aef75038379.svg">
+                </div>
+
+                <div class="mt-5 flex-1 h-0 overflow-y-auto" data-controller="domain">
+                    <div class="relative mx-6 rounded-md pl-3 pr-10 pt-2 text-left cursor-default sm:text-sm"
+                         aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label"
+                         data-action="click-&gt;domain#toggleMenu">
+                        <div class="flex justify-start">
+            <span class="flex items-center mr-2">
+              <span class="flex justify-center items-center h-12 w-12 bg-menuLogo rounded-full text-xs ">S</span>
+            </span>
+                            <div class="flex flex-col w-3/4">
+                                <span class=" mb-1">Staging Trusona Portal</span>
+
+                                <div class=" border border-0 p-0 m-0 truncate  disabled  text-xxs w-full ">
+                                    authcloud.staging.trusona.net
+                                </div>
+
+                                <input data-domain-target="selectedDomain" class="hidden" type="text" name="domain"
+                                       readonly="" value="authcloud.staging.trusona.net">
+                            </div>
+                        </div>
+                        <span class="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+  <path fill-rule="evenodd"
+        d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+        clip-rule="evenodd"></path>
+</svg>
+
+          </span>
+                    </div>
+
+                    <ul data-domain-target="domainList"
+                        class="hidden transition ease-in duration-100 delay-150 absolute z-20 mt-1 w-full bg-white shadow-lg rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 max-h-60 overflow-auto focus:outline-none sm:text-sm"
+                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                        aria-activedescendant="listbox-option-3">
+                        <li class="text-gray-900 cursor-default select-none py-2 pl-3 pr-9 flex justify-between"
+                            data-domain-target="domainListItem" data-action="click-&gt;domain#selectItem"
+                            data-domain-value-param="authcloud.staging.trusona.net" role="option">
+                            <div>
+              <span class="font-semibold ml-3 block truncate">
+                authcloud.staging.trusona.net
+              </span>
+                            </div>
+
+                            <span class="pr-4">
+              <img src="./Management Portal_files/solid-check-4f4edbfb6304e03d78a16c151c19146e55bac03e3ae449de1721d48a667626fc.svg">
+            </span>
+                        </li>
+                    </ul>
+
+                    <div class="my-6 mx-8 border-b border-navBorder divide-y"></div>
+
+                    <nav class="flex-1 px-2 pb-4 space-y-1">
+                        <a class="opacity-50 group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/analytics">
+                            <div class="mr-3"><img
+                                    src="./Management Portal_files/pie-line-graph-eb9a9ade04f44dc6be93629def2f68dfe92fed669c67be4130e04b60fa68cbf1.svg">
+                            </div>
+                            Analytics
+                        </a>
+                        <a data-turbo="false"
+                           class="opacity-50  group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/journey_builder">
+                            <div class="mr-3"><img
+                                    src="./Management Portal_files/hierarchy-4-04ca7c903bd18d8b452e5679bb46d56efe8182248ad4c86f893a291e232c680f.svg">
+                            </div>
+                            Journey Builder
+                        </a>
+                        <a class="opacity-50  group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/registrations">
+                            <div class="mr-3"><img
+                                    src="./Management Portal_files/notes-paper-text-42b7980f86dea3a5b2c7e8bcc662b1d9d4da784a921756332b83d4c174a8c826.svg">
+                            </div>
+                            Reports
+                        </a>
+                        <a class="opacity-50  group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/user_activity">
+                            <div class="mr-3"><img
+                                    src="./Management Portal_files/user-activity-82821ba636da435a603c423184eb202fd1c292c131d6905ba7ae882b5cefbdef.svg">
+                            </div>
+                            User Activity
+                        </a>
+                        <a class="opacity-50  group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/admin_settings/oidc">
+                            <div class="mr-3"><img
+                                    src="./Management Portal_files/cog-086d8be59e0818ce27aa36a46e934b8897d824723610fac90dba06983d9322d1.svg">
+                            </div>
+                            Settings
+                        </a>
+
+                        <a class="opacity-50  group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/identity_verifications/new">
+                            <div class="mr-3"><img
+                                    src="./Management Portal_files/notes-paper-text-42b7980f86dea3a5b2c7e8bcc662b1d9d4da784a921756332b83d4c174a8c826.svg">
+                            </div>
+                            ATO Protect
+                        </a>
+
+                    </nav>
+                </div>
+            </div>
+
+            <div class="flex-shrink-0 w-14" aria-hidden="true">
+                <!-- Dummy element to force sidebar to shrink to fit close icon -->
+            </div>
+        </div>
+    </div>
+    <div class="mt-20 text-ferrite hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 z-30"
+         data-nav-target="desktopSidebar">
+        <div class="flex flex-col flex-grow pt-5">
+            <div class="mt-5 flex-1 flex flex-col" data-controller="domain">
+                <div class="flex-1 flex flex-col">
+                    <nav class="flex-1 px-4 pb-4 space-y-1">
+                        <a class="hover:bg-gray-200 opacity-50 hover:opacity-100  text-ferrite group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/analytics">
+                            <div class="mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27"
+                                     fill="none">
+                                    <path d="M9.00159 21.6222L13.2363 17.3875C13.3863 17.2374 13.5899 17.153 13.8021 17.153C14.0144 17.153 14.2179 17.2374 14.368 17.3875L16.4363 19.4558C16.5863 19.6059 16.7899 19.6903 17.0021 19.6903C17.2144 19.6903 17.4179 19.6059 17.568 19.4558L21.8016 15.2222"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M1 3.12256C1 2.29413 1.67157 1.62256 2.5 1.62256H23.5C24.3284 1.62256 25 2.29413 25 3.12256V24.1226C25 24.951 24.3284 25.6226 23.5 25.6226H2.5C1.67157 25.6226 1 24.951 1 24.1226V3.12256Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M9.00154 14.4228C11.6525 14.4228 13.8015 12.2737 13.8015 9.62275C13.8015 6.97179 11.6525 4.82275 9.00154 4.82275C6.35057 4.82275 4.20154 6.97179 4.20154 9.62275C4.20154 12.2737 6.35057 14.4228 9.00154 14.4228Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M9.00159 4.82275V9.62275L12.3957 13.0169" stroke="currentColor"
+                                          stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17.8 6.42236H21" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M17.8 9.62305H21" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                            <span data-desktop-menu-label="Analytics">Analytics</span>
+                        </a>
+                        <a data-turbo="false"
+                           class="hover:bg-gray-200 opacity-50 hover:opacity-100  text-ferrite group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/journey_builder">
+                            <div class="mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27"
+                                     fill="none">
+                                    <path d="M3.57227 20.8258V20.8258C3.75203 17.1338 7.09616 14.2723 11.0524 14.4253H14.9496C18.9058 14.2723 22.2499 17.1338 22.4297 20.8258V20.8258"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M13 8.021V20.8221" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M13.001 8.02311C14.8945 8.02311 16.4295 6.59029 16.4295 4.82283C16.4295 3.05537 14.8945 1.62256 13.001 1.62256C11.1074 1.62256 9.57239 3.05537 9.57239 4.82283C9.57239 6.59029 11.1074 8.02311 13.001 8.02311Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M3.57143 25.6227C4.9916 25.6227 6.14287 24.5481 6.14287 23.2225C6.14287 21.8969 4.9916 20.8223 3.57143 20.8223C2.15127 20.8223 1 21.8969 1 23.2225C1 24.5481 2.15127 25.6227 3.57143 25.6227Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M12.9993 25.6227C14.4195 25.6227 15.5707 24.5481 15.5707 23.2225C15.5707 21.8969 14.4195 20.8223 12.9993 20.8223C11.5791 20.8223 10.4279 21.8969 10.4279 23.2225C10.4279 24.5481 11.5791 25.6227 12.9993 25.6227Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M22.4285 25.6227C23.8487 25.6227 24.9999 24.5481 24.9999 23.2225C24.9999 21.8969 23.8487 20.8223 22.4285 20.8223C21.0083 20.8223 19.8571 21.8969 19.8571 23.2225C19.8571 24.5481 21.0083 25.6227 22.4285 25.6227Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                            <span data-desktop-menu-label="Journey Builder">Journey Builder</span>
+                        </a>
+                        <a class="hover:bg-gray-200 opacity-50 hover:opacity-100  text-ferrite group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/registrations">
+                            <div class="mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27"
+                                     fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M14.7376 25.6226H2.6C1.71634 25.6226 1 24.9062 1 24.0226V3.22256C1 2.3389 1.71634 1.62256 2.6 1.62256H23.4C24.2837 1.62256 25 2.3389 25 3.22256V15.3602C24.9999 15.7842 24.8315 16.1909 24.5317 16.4908L15.8683 25.1543C15.5683 25.454 15.1617 25.6225 14.7376 25.6226Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M15.4 25.4785V17.6225C15.4 16.7388 16.1164 16.0225 17 16.0225H24.856"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M7.40002 8.02246H20.2" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M7.40002 12.8228H13" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                            <span data-desktop-menu-label="Reports">Reports</span>
+                        </a>
+                        <a class="hover:bg-gray-200 opacity-50 hover:opacity-100  text-ferrite group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/user_activity">
+                            <div class="mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28"
+                                     fill="none">
+                                    <path d="M12.7 1.47949C11.0292 1.47949 9.42673 2.11163 8.24525 3.23685C7.06377 4.36207 6.40002 5.88819 6.40002 7.47949C6.40002 9.07079 7.06377 10.5969 8.24525 11.7221C9.42673 12.8474 11.0292 13.4795 12.7 13.4795C14.3709 13.4795 15.9733 12.8474 17.1548 11.7221C18.3363 10.5969 19 9.07079 19 7.47949C19 5.88819 18.3363 4.36207 17.1548 3.23685C15.9733 2.11163 14.3709 1.47949 12.7 1.47949V1.47949Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M1 27.1936C1 21.0336 6.232 16.0508 12.7 16.0508C19.156 16.0508 24.4 21.0336 24.4 27.1936"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                            <span data-desktop-menu-label="User Activity">User Activity</span>
+                        </a>
+                        <a class="hover:bg-gray-200 opacity-50 hover:opacity-100  text-ferrite group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/admin_settings/oidc">
+                            <div class="mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                     fill="none">
+                                    <g clip-path="url(#clip0_2977_4512)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M10.546 3.06019C10.9171 3.47213 11.4455 3.70733 12 3.70733C12.5545 3.70733 13.0829 3.47213 13.454 3.06019L14.4 2.02219C14.9556 1.40733 15.8379 1.20855 16.6035 1.52577C17.369 1.84299 17.8521 2.60759 17.81 3.43519L17.739 4.83519C17.7112 5.38746 17.9183 5.92572 18.309 6.31702C18.6997 6.70831 19.2377 6.91615 19.79 6.88919L21.19 6.81819C22.017 6.77741 22.7804 7.26104 23.0968 8.02625C23.4132 8.79146 23.2143 9.67297 22.6 10.2282L21.558 11.1682C21.1466 11.5398 20.9118 12.0683 20.9118 12.6227C20.9118 13.1771 21.1466 13.7056 21.558 14.0772L22.6 15.0172C23.2149 15.5727 23.4136 16.4551 23.0964 17.2206C22.7792 17.9862 22.0146 18.4693 21.187 18.4272L19.787 18.3562C19.2335 18.3277 18.6938 18.5352 18.3019 18.9271C17.91 19.319 17.7025 19.8587 17.731 20.4122L17.802 21.8122C17.8387 22.6354 17.3563 23.3936 16.595 23.7091C15.8337 24.0246 14.9564 23.83 14.4 23.2222L13.459 22.1812C13.0876 21.7698 12.5593 21.535 12.005 21.535C11.4507 21.535 10.9224 21.7698 10.551 22.1812L9.606 23.2222C9.0504 23.8329 8.17154 24.0297 7.40854 23.7143C6.64554 23.3989 6.1622 22.6389 6.2 21.8142L6.272 20.4142C6.30047 19.8607 6.09302 19.321 5.7011 18.9291C5.30918 18.5372 4.76952 18.3297 4.216 18.3582L2.816 18.4292C1.98873 18.4724 1.22381 17.9903 0.905883 17.2253C0.587955 16.4603 0.785828 15.5781 1.4 15.0222L2.441 14.0822C2.85242 13.7106 3.08722 13.1821 3.08722 12.6277C3.08722 12.0733 2.85242 11.5448 2.441 11.1732L1.4 10.2282C0.787888 9.67294 0.590308 8.79315 0.906222 8.02948C1.22214 7.26582 1.98351 6.78273 2.809 6.82219L4.209 6.89319C4.76359 6.92235 5.30448 6.71462 5.69699 6.32173C6.0895 5.92884 6.2967 5.38775 6.267 4.83319L6.2 3.43219C6.16129 2.60706 6.64431 1.84631 7.40754 1.53035C8.17076 1.21439 9.05017 1.41113 9.606 2.02219L10.546 3.06019Z"
+                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                              stroke-linejoin="round"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M12 17.123C14.4853 17.123 16.5 15.1083 16.5 12.623C16.5 10.1378 14.4853 8.12305 12 8.12305C9.51472 8.12305 7.5 10.1378 7.5 12.623C7.5 15.1083 9.51472 17.123 12 17.123Z"
+                                              stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                              stroke-linejoin="round"></path>
+                                    </g>
+                                    <defs>
+                                        <clippath id="clip0_2977_4512">
+                                            <rect y="0.622559" width="24" height="24" rx="7" fill="white"></rect>
+                                        </clippath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <span data-desktop-menu-label="Settings">Settings</span>
+                        </a>
+                        <a class="hover:bg-gray-200 opacity-50 hover:opacity-100  text-ferrite group flex items-center pl-6 py-4 text-sm font-medium rounded-md"
+                           href="https://portal.staging.trusona.com/identity_verifications/new">
+                            <div class="mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="27" viewBox="0 0 26 27"
+                                     fill="none">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M14.7376 25.6226H2.6C1.71634 25.6226 1 24.9062 1 24.0226V3.22256C1 2.3389 1.71634 1.62256 2.6 1.62256H23.4C24.2837 1.62256 25 2.3389 25 3.22256V15.3602C24.9999 15.7842 24.8315 16.1909 24.5317 16.4908L15.8683 25.1543C15.5683 25.454 15.1617 25.6225 14.7376 25.6226Z"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M15.4 25.4785V17.6225C15.4 16.7388 16.1164 16.0225 17 16.0225H24.856"
+                                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                          stroke-linejoin="round"></path>
+                                    <path d="M7.40002 8.02246H20.2" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M7.40002 12.8228H13" stroke="currentColor" stroke-width="1.5"
+                                          stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </div>
+                            <span data-desktop-menu-label="Validations">ATO Protect</span>
+                        </a>
+
+                    </nav>
+
+                    <button data-action="click-&gt;nav#toggleDesktopSidebar"
+                            class="opacity-50 flex justify-start items-center mx-6 rounded-md pl-5 py-3 text-left cursor-pointer mb-4 collapse-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="20" viewBox="0 0 22 20" fill="none">
+                            <path d="M20.375 9.99756H5.375" stroke="currentColor" stroke-width="1.5"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M8.5 13.1226L5.375 9.99756L8.5 6.87256" stroke="currentColor" stroke-width="1.5"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M1.625 1.24756V18.7476" stroke="currentColor" stroke-width="1.5"
+                                  stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+
+                        <span class="ml-3 text-ferrite text-sm" data-collapse-btn-text="collpase">Collapse</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fixed z-40 h-15 md:h-20 bg-white w-full shadow flex w-screen">
+        <button data-action="click-&gt;nav#openMobileSidebar" type="button"
+                class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden">
+            <span class="sr-only">Open sidebar</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                 stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h7"></path>
+            </svg>
+        </button>
+
+        <div id="section-header" class="px-5 py-4 flex flex-auto">
+            <div class="flex flex-auto items-center ">
+                <div class="hidden md:inline-block "><img class="flex"
+                                                          src="./Management Portal_files/logo-7eea4d332b6be658edc3f4086ae4e2dc969decb7d7201830c326bf6512dbad0f.svg">
+                </div>
+
+                <div class="flex flex-auto hidden md:flex">
+                    <h1 class="main-header pl-6 text-sm md:text-2xl font-medium font-semibold text-ferrite flex pr-2">
+                        <div class="relative" data-controller="flyout-component"
+                             data-action="click@window-&gt;flyout-component#closeMenus">
+                            <button type="button" class="inline-flex items-center gap-x-1 text-sm leading-6"
+                                    aria-expanded="false" data-action="click-&gt;flyout-component#buttonClicked">
+                                <span>Staging Trusona Portal</span>
+
+                                <svg class="h-5 w-5 flex" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                          clip-rule="evenodd"></path>
+                                </svg>
+
+                            </button>
+
+                            <div class="fixed z-40 mt-5 flex w-fit max-w-max hidden min-w-30  max-h-5/6 h-fit overflow-y-auto shadow-lg bg-white"
+                                 role="flyout-menu" style="display: none;">
+                                <div class=" max-w-md flex-auto text-sm leading-6  ring-1 ring-gray-900/5 ">
+                                    <div class="p-2">
+                                        <h1 class="px-5 py-4 text-ferrite w-fit pr-10">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"
+                                                 viewBox="0 0 69 69" fill="none" class="inline-block mr-3 h-4">
+                                                <path d="M10.0002 28.2002H33.8002C34.5428 28.2002 35.255 28.4952 35.7801 29.0203C36.3052 29.5454 36.6002 30.2576 36.6002 31.0002V66.0002H7.2002V31.0002C7.2002 30.2576 7.49519 29.5454 8.0203 29.0203C8.5454 28.4952 9.25759 28.2002 10.0002 28.2002V28.2002Z"
+                                                      stroke="currentColor" stroke-width="4.2" stroke-linecap="round"
+                                                      stroke-linejoin="round"></path>
+                                                <path d="M45.0002 66H61.8002V7.2C61.8002 6.08609 61.3577 5.0178 60.57 4.23015C59.7824 3.4425 58.7141 3 57.6002 3H32.4002C31.2863 3 30.218 3.4425 29.4303 4.23015C28.6427 5.0178 28.2002 6.08609 28.2002 7.2V19.8H32.4002"
+                                                      stroke="currentColor" stroke-width="4.2" stroke-linecap="round"
+                                                      stroke-linejoin="round"></path>
+                                                <path d="M7.2 66H3" stroke="currentColor" stroke-width="4.2"
+                                                      stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M61.7998 66H65.9998" stroke="currentColor" stroke-width="4.2"
+                                                      stroke-linecap="round" stroke-linejoin="round"></path>
+                                                <path d="M28.2002 11.3999H40.8002" stroke="currentColor"
+                                                      stroke-width="4.2" stroke-linecap="round"
+                                                      stroke-linejoin="round"></path>
+                                                <path d="M7.2002 36.6001H13.5002" stroke="currentColor"
+                                                      stroke-width="4.2" stroke-linecap="round"
+                                                      stroke-linejoin="round"></path>
+                                                <path d="M24.0001 65.9999H15.6001V57.5999C15.6001 56.486 16.0426 55.4177 16.8302 54.6301C17.6179 53.8424 18.6862 53.3999 19.8001 53.3999C20.914 53.3999 21.9823 53.8424 22.7699 54.6301C23.5576 55.4177 24.0001 56.486 24.0001 57.5999V65.9999Z"
+                                                      stroke="currentColor" stroke-width="4.2" stroke-linecap="round"
+                                                      stroke-linejoin="round"></path>
+                                                <path d="M53.4 66.0002H45V53.4002C45 52.2863 45.4425 51.218 46.2302 50.4303C47.0178 49.6427 48.0861 49.2002 49.2 49.2002C50.3139 49.2002 51.3822 49.6427 52.1698 50.4303C52.9575 51.218 53.4 52.2863 53.4 53.4002V66.0002Z"
+                                                      stroke="currentColor" stroke-width="4.2" stroke-linecap="round"
+                                                      stroke-linejoin="round"></path>
+                                            </svg>
+
+                                            Organizations
+                                        </h1>
+                                        <div class="border-t-2 border-gray-200  mx-4 mb-2 mt-3 h-5"></div>
+
+                                        <div class="pb-4">
+                                            <div class="group relative flex gap-x-6 py-2 px-4 hover:bg-gray-200 hover:text-ferrite font-normal text-gray-500 rounded-md">
+                                                <form class="button_to" method="post"
+                                                      action="https://portal.staging.trusona.com/organizations?organization_name=Staging+Trusona+Portal">
+                                                    <input type="hidden" name="_method" value="put" autocomplete="off">
+                                                    <button class="#&lt;Class:0x00007fcb3f85e398&gt;" data-turbo="false"
+                                                            type="submit">Staging Trusona Portal
+                                                    </button>
+                                                    <input type="hidden" name="authenticity_token"
+                                                           value="_tyjcmlDXJYcTJvI6pjMiF2mL4rBa99J-PLdmtGpTNd-U16EbZ6LtFpwph0ibi2VK8ODjWOirb4Ub9C8CXmWjA"
+                                                           autocomplete="off"></form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </h1>
+
+                    <div class="border-r border-r-gray-400 my-2 flex"></div>
+
+                    <h2 class="main-header sm:text-2xl font-medium text-gray-500 flex pl-2">
+                        <div class="relative" data-controller="flyout-component"
+                             data-action="click@window-&gt;flyout-component#closeMenus">
+                            <button type="button" class="inline-flex items-center gap-x-1 text-sm leading-6"
+                                    aria-expanded="false" data-action="click-&gt;flyout-component#buttonClicked">
+                                <span>authcloud.staging.trusona.net</span>
+
+                                <svg class="h-5 w-5 flex" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                          d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                          clip-rule="evenodd"></path>
+                                </svg>
+
+                            </button>
+
+                            <div class="fixed z-40 mt-5 flex w-fit max-w-max hidden min-w-30  max-h-5/6 h-fit overflow-y-auto shadow-lg bg-white"
+                                 role="flyout-menu" style="display: none;">
+                                <div class=" max-w-md flex-auto text-sm leading-6  ring-1 ring-gray-900/5 ">
+                                    <div class="p-2">
+                                        <h1 class="px-5 py-4 text-ferrite w-fit pr-10">
+
+                                            Tenants
+                                        </h1>
+                                        <div class="border-t-2 border-gray-200  mx-4 mb-2 mt-3 h-5"></div>
+
+                                        <div class="pb-4">
+                                            <div class="group relative flex gap-x-6 py-2 px-4 hover:bg-gray-200 hover:text-ferrite font-normal text-gray-500 rounded-md">
+                                                <form class="button_to" method="post"
+                                                      action="https://portal.staging.trusona.com/domains?origin=authcloud.staging.trusona.net">
+                                                    <input type="hidden" name="_method" value="put" autocomplete="off">
+                                                    <button class="#&lt;Class:0x00007fcb3f85e398&gt;" data-turbo="false"
+                                                            type="submit">authcloud.staging.trusona.net
+                                                    </button>
+                                                    <input type="hidden" name="authenticity_token"
+                                                           value="_77THhlMQ3g0JmobrhQ_87lAZqJnnEdbfp4EKD5Nni108BDFHSBmz3jP6u_nOCBr8a-OnvkABXGgj29PeN4Zxw"
+                                                           autocomplete="off"></form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </h2>
+                </div>
+            </div>
+            <div class="flex justify-end items-center flex-auto">
+                <button class="hidden w-22 justify-center items-center border border-lightBorder rounded-md mx-3 py-2 px-3 cursor-pointer">
+                    <img src="./Management Portal_files/controls-play-610813de549b4a77139584f13c00fd3ac6387ea057695e11a46715be593a0c79.svg">
+                    <span class="ml-2 text-sm">Play</span>
+                </button>
+                <span class="hidden text-green-600" data-journey-builder-target="settingsSaved"
+                      data-form-saver-target="settingsSaved">
+        Settings Saved!
+      </span>
+
+
+                <button class="relative mx-3 border border-lightBorder rounded-md pl-3 sm:pr-3 py-2 text-left sm:text-sm"
+                        data-journey-builder-target="profileButton" data-form-saver-target="profileButton"
+                        id="profile-button">
+                    <div class="flex justify-start items-center cursor-pointer"
+                         data-action="click-&gt;nav#toggleFlyoutMenu">
+    <span class="mr-2">
+      <span class="flex justify-center items-center h-7 w-7 bg-truPurple-light rounded-full text-xs text-white">BR</span>
+    </span>
+                        <div>
+                            <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div id="profile-flyout"
+                         class="absolute mt-3 -translate-x-1/2 transform px-2 sm:px-0 transition duration-200 ease-out left-60 hidden translate-y-1 whitespace-nowrap"
+                         data-nav-target="flyoutMenu">
+                        <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+                            <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                                <a class="md:hidden inline-block -m-3 rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50"
+                                   href="https://portal.staging.trusona.com/organizations">
+                                    <p class="text-sm text-gray-900">Organizations</p>
+                                </a> <a
+                                    class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50"
+                                    href="https://portal.staging.trusona.com/security_settings">
+                                <p class="text-sm text-gray-900">Security Settings</p>
+                            </a>
+                                <a class="-m-3 block rounded-md p-3 transition duration-150 ease-in-out hover:bg-gray-50"
+                                   href="https://portal.staging.trusona.com/session/logout">
+                                    <p class="text-sm text-gray-900">Sign out</p>
+                                </a></div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="application-main-wrapper" class="flex flex-col flex-1 pt-6 p-5 md:p-10 md:pt-20 ">
+        <main data-nav-target="main" data-action="click-&gt;nav#closeFlyoutMenu" class="pt-13 md:pl-64">
+            <turbo-frame id="modal"></turbo-frame>
+
+
+            <turbo-cable-stream-source channel="EventChannel"
+                                       signed-stream-name="IjRlZGQwZGUxLTMwMTItNDhjMy04MDcyLTYzNzM0MDlmYTVkYyI=--ed0edd669d73d82cf16af8ae3df49f510e9bde83b7c8fa1ad0db3bc67fbfbc7d"
+                                       connected=""></turbo-cable-stream-source>
+
+            <div id="workspace-area" class="p-8 pt-4 bg-white rounded-md filter drop-shadow-md relative"
+                 style="min-height: calc(100vh - 175px);padding-bottom:7.5rem">
+                <turbo-frame id="identity_verification">
+
+                    <div class="flex justify-between items-center">
+                    <span class="font-sofia font-normal text-xl sm:text-2xl text-secure">
+                        ATO Protect - Identity Verification Workspace
+                    </span>
+                        <div class="">
+                            <button type="button"
+                                    id="helpTopBtn"
+                                    class="mr-6 text-xl border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            > Need Help?
+                            </button>
+                            <button type="button"
+                                    id="newSessionBtn"
+                                    class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            > + New
+                            </button>
+
+                            <style>
+                                .help-wrapper {
+                                    display: block;
+                                    position: absolute;
+                                    right: 1rem;
+                                    bottom: 1rem;
+                                    width: auto;
+                                    height: auto;
+                                }
+
+                                .help-wrapper button svg.icon-question-mark {
+                                    width: auto;
+                                    height: 18px;
+                                }
+
+                                .help-wrapper button {
+                                    width: 36px;
+                                    height: 36px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 0;
+                                    background-color: white;
+                                    color: #7B46D1;
+                                    border: 1px solid #7B46D1;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                }
+
+                                .help-wrapper .help_tooltip {
+                                    left: -46px;
+                                    right: calc(50% - 19px);
+                                    bottom: 41px;
+                                    width: auto;
+
+                                    display: block;
+                                    position: absolute;
+                                    margin: 0px 0px 5px;
+                                    padding: 4px 4px 4px;
+                                    font-family: inherit;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    font-size: 13px;
+                                    line-height: 16px;
+                                    color: white;
+                                    background-color: #7B46D1;;
+                                    border: 1px solid rgba(120, 120, 128, 0.2);
+                                    filter: drop-shadow(rgba(31, 41, 55, 0.06) 0px 2px 4px) drop-shadow(rgba(31, 41, 55, 0.1) 0px 4px 6px);
+                                    border-radius: 4px;
+                                }
+
+                                .help_tooltip.arrow-down-right::after {
+                                    bottom: -3px;
+                                    right: 15px;
+                                    transform: rotate(-45deg) translateY(3px);
+                                }
+
+                                .help_tooltip::after {
+                                    position: absolute;
+                                    z-index: -1;
+                                    display: block;
+                                    content: " ";
+                                    background-color: #7B46D1;
+                                    width: 10px;
+                                    height: 10px;
+                                }
+
+                                dialog[open] {
+                                    animation: appear .5s cubic-bezier(0, 1.8, 1, 1.8);
+                                }
+
+                                @keyframes appear {
+                                    from {
+                                        opacity: 0;
+                                        transform: translateY(-4rem);
+                                    }
+                                    to {
+                                        opacity: 1;
+                                        transform: translateY(0);
+                                    }
+                                }
+                            </style>
+                            <div class="help-wrapper">
+                                <button id="openModal">
+                                    <svg class="icon-question-mark" width="12" height="18" viewBox="0 0 12 18"
+                                         fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M0 6C0 2.685 2.685 0 6 0C9.315 0 12 2.685 12 6C12 7.92438 10.815 8.95998 9.66114 9.96831C8.56653 10.9249 7.5 11.8569 7.5 13.5H4.5C4.5 10.7681 5.91318 9.68488 7.15566 8.73251C8.13035 7.98541 9 7.31882 9 6C9 4.35 7.65 3 6 3C4.35 3 3 4.35 3 6H0ZM7.5 15V18H4.5V15H7.5Z"
+                                              fill="#7B46D1"></path>
+                                    </svg>
+                                </button>
+                                <div class="help_tooltip arrow-down-right text-center visible">Need help?</div>
+                            </div>
+
+                            <!-- Modal Dialog -->
+                            <dialog id="videoModal" class="rounded-lg overflow-hidden bg-white shadow-md p-8"
+                                    style="width: 65%;height: auto">
+                                <div class="flex flex-col h-full">
+                                    <!-- Close button -->
+                                    <div class="flex justify-end p-2">
+                                        <button id="closeModal"
+                                                class="text-gray-400 hover:text-gray-600 focus:outline-none">
+                                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                                 aria-hidden="true">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                      d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <!-- YouTube Video Iframe (actual video may be self-hosted, in which case, just use a video element) -->
+                                    <div class="flex justify-center items-center flex-grow">
+                                        <iframe class="w-full h-full"
+                                                src="https://www.youtube.com/embed/Zr81awqHd7U?rel=0"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                                    </div>
+                                </div>
+                            </dialog>
+
+                            <script>
+                                const openModalButton = document.getElementById('openModal');
+                                const helpTopBtn = document.getElementById('helpTopBtn');
+                                const closeModalButton = document.getElementById('closeModal');
+                                const dialog = document.getElementById('videoModal');
+                                const iframe = document.querySelector('#videoModal iframe');
+                                let originalSrc = iframe.src; // Store the original src of the iframe
+
+                                openModalButton.addEventListener('click', (event) => {
+                                    event.preventDefault();
+                                    dialog.showModal();
+                                });
+
+                                helpTopBtn.addEventListener('click', (event) => {
+                                    event.preventDefault();
+                                    dialog.showModal();
+                                });
+
+                                closeModalButton.addEventListener('click', (event) => {
+                                    event.preventDefault();
+                                    dialog.close();
+                                    iframe.src = ''; // Stop the video by clearing the src
+                                    iframe.src = originalSrc; // Reset the src to its original value to allow for replaying
+                                });
+                            </script>
+                        </div>
+
+                        <!-- Alert Modal -->
+                        <dialog id="alertModal" class="rounded-lg shadow-xl p-5 bg-white">
+                            <!-- Modal content centered -->
+                            <div class="flex flex-col items-center justify-center">
+                                <div class="flex gap-6">
+                                    <!-- SVG icon -->
+                                    <div class="w-10 h-10 bg-red-100 rounded-full p-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                             stroke-width="1.5" stroke="currentColor" class="w-16 h-16 text-red-500">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                  d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <!-- Header -->
+                                        <h2 class="text-lg font-semibold mt-0">Create a new session?</h2>
+                                        <!-- Paragraph -->
+                                        <p class="mt-2 text-ferrite max-w-md text-left">Are you sure you want to create
+                                            a new session?</p>
+                                        <!-- Dismiss Button -->
+
+                                        <div class="flex justify-end mt-8">
+                                            <button id="closeAlertBtn"
+                                                    class="text-md px-4 py-2 me-2 mb-2 border border-gray-300 rounded-lg  cursor-pointer w-fit mr-4 focus:ring-4 focus:ring-blue-300 focus:outline-none">
+                                                Cancel
+                                            </button>
+                                            <button id="createNewBtn"
+                                                    class="text-md text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg px-4 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                                                Create new
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </dialog>
+
+                        <script>
+                            const newSessionBtn = document.getElementById('newSessionBtn');
+                            const closeAlertBtn = document.getElementById('closeAlertBtn');
+                            const createNewBtn = document.getElementById('createNewBtn');
+                            const alertModal = document.getElementById('alertModal');
+
+                            newSessionBtn.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                alertModal.showModal();
+                            });
+
+                            closeAlertBtn.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                alertModal.close();
+                            });
+
+                            createNewBtn.addEventListener('click', (event) => {
+                                event.preventDefault();
+                                window.location = "../startPage/startPage.html"
+                            });
+                        </script>
+                    </div>
+                    <div class="flex justify-between mt-6">
+
+                        <div>
+                            <div class="">
+                                <label for="">Share this link with the caller and ask them to scan the BACK of their
+                                    US/CAN driver license</label>
+                            </div>
+
+                            <code style="-webkit-user-select: none; -ms-user-select: none; user-select: none;"
+                                  class="underline pt-4 text-sm mr-4" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</code>
+
+                            <button type="button"
+                                    id="copyLinkBtn"
+                                    class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            >
+                                Copy Link
+                            </button>
+                        </div>
+
+                    </div>
+
+                    <turbo-frame id="identity_verification_results">
+
+                        <div id="foo">
+                            <div id="device-data" data-devices="data-verification-map-target=&quot;devices&quot;">
+
+                                <table class="pb-10 mt-6">
+                                    <tbody>
+                                    <tr>
+                                        <td colspan="2"><label class="pr-5 text-2xl mt-6">Scan Only Info</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="pr-5">Status</label></td>
+                                        <td>Waiting for scan</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+
+                                <br>&nbsp;<br>
+
+                                <h1 class="text-2xl mt-6 inline-block">Devices</h1> - Sorted by order clicked, latest on
+                                top
+
+                                <div class="overflow-auto">
+                                    <table class="mt-8 table-fixed min-w-full border-b border-gray-200"
+                                           id="organization--table">
+                                        <thead>
+                                        <tr class="text-left text-white font-light bg-secure">
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        IP Address
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        IP Country
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        IP Region
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        IP City
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Browser Locale
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Browser Time Zone
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Browser Date/Time
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Platform
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Browser Type
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        OS
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        ISP Name
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Screen Size
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        User Agent
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                            <th scope="col"
+                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                <div class="flex items-center justify-between w-full">
+                                                    <div class="">
+                                                        Browser Date Time String
+                                                    </div>
+
+                                                </div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200 bg-white" id="-table-body">
+                                        <tr>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">98.46.252.28
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">United
+                                                States
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Illinois</td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Aurora</td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">en-US</td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                America/Chicago (-6)
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">3/10/2024
+                                                12:44
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iPhone</td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mobile Safari
+                                                17.3
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iOS 17.3</td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">COMCAST-7922
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">844 X 390</td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mozilla/5.0
+                                                (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15
+                                                (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1
+                                            </td>
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Sun Mar 10
+                                                2024 12:44:53 GMT-0500 (Central Daylight Time)
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div data-controller="verification-map">
+                                    <div id="device-data"
+                                         data-devices="[{&quot;id&quot;:&quot;944497b1-9bdf-4116-9e46-5d24d625dd67&quot;,&quot;ip_address&quot;:&quot;98.46.252.28&quot;,&quot;city&quot;:&quot;Aurora&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;region&quot;:&quot;Illinois&quot;,&quot;isp&quot;:&quot;COMCAST-7922&quot;,&quot;platform&quot;:&quot;iPhone&quot;,&quot;language&quot;:&quot;en-US&quot;,&quot;display_height&quot;:844,&quot;browser_time_zone&quot;:&quot;America/Chicago&quot;,&quot;ip_address_time_zone&quot;:&quot;America/Chicago&quot;,&quot;display_width&quot;:390,&quot;browser_height&quot;:844,&quot;browser_width&quot;:390,&quot;browser&quot;:&quot;Mobile Safari 17.3&quot;,&quot;user_agent&quot;:&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1&quot;,&quot;latitude&quot;:41.7688,&quot;longitude&quot;:-88.3405,&quot;operating_system&quot;:&quot;iOS 17.3&quot;,&quot;date_time&quot;:&quot;3/10/2024 12:44&quot;,&quot;browser_date_time&quot;:&quot;Sun Mar 10 2024 12:44:53 GMT-0500 (Central Daylight Time)&quot;,&quot;browser_time_zone_with_offset&quot;:&quot;America/Chicago (-6)&quot;}]"
+                                         data-verification-map-target="devices">
+
+                                        <div id="summaries-data" data-summaries="[]"
+                                             data-verification-map-target="summaries">
+
+                                            <div class="pt-3" style="width: 100%;"></div>
+                                            <div class="pt-3 pb-4 leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                                                 id="mapid" style="width: 100%; height: 500px; position: relative;"
+                                                 tabindex="0">
+                                                <div class="leaflet-pane leaflet-map-pane"
+                                                     style="transform: translate3d(0px, 0px, 0px);">
+                                                    <div class="leaflet-pane leaflet-tile-pane">
+                                                        <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                                            <div class="leaflet-tile-container leaflet-zoom-animated"
+                                                                 style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
+                                                                <img alt="" src="./Management Portal_files/3048.png"
+                                                                     class="leaflet-tile leaflet-tile-loaded"
+                                                                     style="width: 256px; height: 256px; transform: translate3d(710px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(1).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047.png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(710px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(1).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049.png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(710px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(1).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(2).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(3).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(2).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(3).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(2).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(3).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(4).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(5).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(4).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(5).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(4).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(5).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(6).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3048(7).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, 230px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(6).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3047(7).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, -26px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(6).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, 486px, 0px); opacity: 1;"><img
+                                                                    alt="" src="./Management Portal_files/3049(7).png"
+                                                                    class="leaflet-tile leaflet-tile-loaded"
+                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, 486px, 0px); opacity: 1;">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-overlay-pane"></div>
+                                                    <div class="leaflet-pane leaflet-shadow-pane"></div>
+                                                    <div class="leaflet-pane leaflet-marker-pane"><img
+                                                            src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0zNi42MTQgMTUuNjY5N0MzNi43MjcxIDE1LjU0NDYgMzYuODE1MSAxNS4zOTMgMzYuODcxOSAxNS4yMjU0QzM2LjkyODYgMTUuMDU3OCAzNi45NTI4IDE0Ljg3ODIgMzYuOTQyNyAxNC42OTg5QzM2LjkzMjcgMTQuNTE5NyAzNi44ODg3IDE0LjM0NSAzNi44MTM2IDE0LjE4N0MzNi43Mzg2IDE0LjAyOSAzNi42MzQ0IDEzLjg5MTQgMzYuNTA4MiAxMy43ODM3QzMxLjcxMTYgOS44MTEwNSAyNS45MzA5IDcuNjc2MzUgMjAgNy42ODc1MUMxMy44MzI3IDcuNjg3NTEgOC4xMjY3NCA5Ljk0NzY0IDMuNDkxNzQgMTMuNzgzN0MzLjM2NTM5IDEzLjg5MTIgMy4yNjEwMiAxNC4wMjg3IDMuMTg1OCAxNC4xODY2QzMuMTEwNTkgMTQuMzQ0NSAzLjA2NjMyIDE0LjUxOTEgMy4wNTYwNSAxNC42OTg0QzMuMDQ1NzkgMTQuODc3NiAzLjA2OTc3IDE1LjA1NzMgMy4xMjYzNCAxNS4yMjVDMy4xODI5MSAxNS4zOTI3IDMuMjcwNzMgMTUuNTQ0NCAzLjM4Mzc0IDE1LjY2OTdDMy41ODA4NCAxNS44ODk0IDMuODM5NzIgMTYuMDIyNyA0LjExNDcyIDE2LjA0NjFDNC4zODk3MSAxNi4wNjk2IDQuNjYzMTMgMTUuOTgxNiA0Ljg4Njc0IDE1Ljc5NzhDOS4yODU5NSAxMi4xODI0IDE0LjU3NSAxMC4yNDA5IDIwIDEwLjI1QzI1LjY0MDcgMTAuMjUgMzAuODYwNyAxMi4zMDUxIDM1LjExMSAxNS43OTUzQzM1LjU3MjIgMTYuMTc0NSAzNi4yMTM1IDE2LjEyODQgMzYuNjE0IDE1LjY2OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzEuNzY1MyAyMS4xOTQ0QzMxLjg4MTIgMjEuMDY3IDMxLjk3MDggMjAuOTExOCAzMi4wMjc0IDIwLjc0MDFDMzIuMDg0MSAyMC41NjgzIDMyLjEwNjUgMjAuMzg0MyAzMi4wOTI5IDIwLjIwMTVDMzIuMDc5MyAyMC4wMTg3IDMyLjAzMDEgMTkuODQxNiAzMS45NDg5IDE5LjY4MzFDMzEuODY3OCAxOS41MjQ3IDMxLjc1NjYgMTkuMzg4OCAzMS42MjM1IDE5LjI4NTRDMjguMTYzNiAxNi43MjY2IDI0LjEyNTQgMTUuMzY4MSAyMCAxNS4zNzVDMTUuNzEzOCAxNS4zNzUgMTEuNzIgMTYuODEgOC4zNzY1MSAxOS4yODU0QzguMjQyNzUgMTkuMzg4MiA4LjEzMDkyIDE5LjUyMzggOC4wNDkyNCAxOS42ODIzQzcuOTY3NTYgMTkuODQwOCA3LjkxODEgMjAuMDE4MSA3LjkwNDUxIDIwLjIwMTNDNy44OTA5MSAyMC4zODQ0IDcuOTEzNTIgMjAuNTY4NyA3Ljk3MDY3IDIwLjc0MDVDOC4wMjc4MiAyMC45MTI0IDguMTE4MDYgMjEuMDY3NSA4LjIzNDc2IDIxLjE5NDRDOC40MjY0NyAyMS40MDc1IDguNjc2MDggMjEuNTQwMSA4Ljk0MjY1IDIxLjU3MDNDOS4yMDkyMSAyMS42MDA2IDkuNDc2ODkgMjEuNTI2OCA5LjcwMTc2IDIxLjM2MUMxMi43NzUzIDE5LjExOSAxNi4zNTAxIDE3LjkzMDYgMjAgMTcuOTM3NUMyMy42NDkyIDE3LjkzMTEgMjcuMjIzMSAxOS4xMTk0IDMwLjI5NiAyMS4zNjFDMzAuNzU5NSAyMS42OTkyIDMxLjM3NiAyMS42Mzc3IDMxLjc2NTMgMjEuMTk0NFpNMjYuODUzNSAyNi43ODg0QzI3LjM2MiAyNi4yMDkyIDI3LjI2OTggMjUuMjM4MSAyNi42Mjg1IDI0Ljg2NjVDMjQuNTc0NiAyMy42NzkxIDIyLjMwMzQgMjMuMDYxIDIwIDIzLjA2MjVDMTcuNjE1IDIzLjA2MjUgMTUuMzYwNSAyMy43MTM0IDEzLjM3MTUgMjQuODY2NUMxMi43MzAzIDI1LjIzODEgMTIuNjM4IDI2LjIwOTIgMTMuMTQ2NSAyNi43ODg0TDEzLjE4MDMgMjYuODI2OEMxMy41NDAzIDI3LjIzNjggMTQuMDk2IDI3LjMxMzcgMTQuNTU1IDI3LjA1NzRDMTYuMjUwNCAyNi4xMTM0IDE4LjExMjkgMjUuNjIzNCAyMCAyNS42MjVDMjEuOTUzIDI1LjYyNSAyMy44MDI1IDI2LjE0MDEgMjUuNDQ1IDI3LjA2QzI1LjkwMTggMjcuMzE2MiAyNi40NTc1IDI3LjIzOTQgMjYuODE3NSAyNi44MjY4TDI2Ljg1MzUgMjYuNzg4NFpNMjIuMzg1IDMxLjg3NzVDMjIuODI2IDMxLjM3NTIgMjIuODMwNSAzMC41NDUgMjIuMjk1IDMwLjE4NjJDMjEuNjAwNCAyOS43MTY5IDIwLjgwNzcgMjkuNDY5IDIwIDI5LjQ2ODdDMTkuMTkyMyAyOS40NjkgMTguMzk5NiAyOS43MTY5IDE3LjcwNSAzMC4xODYyQzE3LjE2OTUgMzAuNTQ1IDE3LjE3NCAzMS4zNzUyIDE3LjYxNSAzMS44Nzc1TDE5LjIwMzUgMzMuNjg2NkMxOS40MTQ1IDMzLjkyNjggMTkuNzAwNiAzNC4wNjE4IDE5Ljk5ODkgMzQuMDYxOEMyMC4yOTcyIDM0LjA2MTggMjAuNTgzMyAzMy45MjY4IDIwLjc5NDMgMzMuNjg2NkwyMi4zODUgMzEuODc3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
+                                                            class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
+                                                            alt="Marker" tabindex="0" role="button"
+                                                            style="margin-left: 0px; margin-top: 0px; width: 32px; height: 32px; transform: translate3d(905px, 250px, 0px); z-index: 250;">
+                                                    </div>
+                                                    <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                                                    <div class="leaflet-pane leaflet-popup-pane"></div>
+                                                    <div class="leaflet-proxy leaflet-zoom-animated"
+                                                         style="transform: translate3d(533955px, 780308px, 0px) scale(4096);"></div>
+                                                </div>
+                                                <div class="leaflet-control-container">
+                                                    <div class="leaflet-top leaflet-left">
+                                                        <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a
+                                                                class="leaflet-control-zoom-in"
+                                                                href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
+                                                                title="Zoom in" role="button" aria-label="Zoom in"
+                                                                aria-disabled="false"><span aria-hidden="true">+</span></a><a
+                                                                class="leaflet-control-zoom-out"
+                                                                href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
+                                                                title="Zoom out" role="button" aria-label="Zoom out"
+                                                                aria-disabled="false"><span aria-hidden="true">−</span></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="leaflet-top leaflet-right"></div>
+                                                    <div class="leaflet-bottom leaflet-left"></div>
+                                                    <div class="leaflet-bottom leaflet-right">
+                                                        <div class="leaflet-control-attribution leaflet-control"><a
+                                                                href="https://leafletjs.com/"
+                                                                title="A JavaScript library for interactive maps">
+                                                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                                 width="12" height="8" viewBox="0 0 12 8"
+                                                                 class="leaflet-attribution-flag">
+                                                                <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
+                                                                <path fill="#FFD500" d="M0 4h12v3H0z"></path>
+                                                                <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
+                                                            </svg>
+                                                            Leaflet</a> <span aria-hidden="true">|</span> Map data © <a
+                                                                href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+                                                            contributors
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </turbo-frame>
+                </turbo-frame>
+            </div>
+
+        </main>
+    </div>
+</div>
+
+
+</body>
+</html>

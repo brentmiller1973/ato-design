@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+[data-nav-target="desktopSidebar"].small-desktop-sidebar{
+    width: 7.25rem;
+}
+
+[data-desktop-domain="desktopDomainSelector"].small_toggle {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+[data-nav-target="desktopSidebar"] .logo-small {
+    margin-left: 1.5rem;
+}
+
+[data-nav-target="desktopSidebar"] .logo-large {
+    margin-left: 1.25rem;
+}
+
+[data-desktop-domain="desktopDomainSelector"].small_toggle .domain-text,
+[data-desktop-domain="desktopDomainSelector"].small_toggle .domain-selection-ctr
+{
+    display: none;
+}
+
+[data-nav-target="desktopSidebar"] .collapse-btn.collapse-btn-closed img {
+    transform: scaleX(-1);
+}
+
+
+
+
+#journey-builder-flows-form svg {
+    z-index: 999;
+}
+
+#journey-builder-flows-form input[type="radio"]:checked + span {
+    display: block;
+    z-index: -1;
+}
+
+.tippy-box, .tippy-content {
+    background-color: #19064e;
+}
+
+.tippy-arrow {
+    background-color: #19064e;
+}
+
+.tippy-content div {
+    font-size: 1rem;
+    color: #ffffff;
+    padding:1rem;
+}
+
+.journeyFlowDialog {
+    border: none !important;
+    border-radius: 10px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1.6rem;
+    max-width: 600px;
+}
+
+.journeyFlowDialog button.close {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.journeyFlowDialog h1 {
+    margin-bottom: 1.2rem;
+}
+
+.journeyFlowDialog h1 .selected-flow-text {
+    text-transform: capitalize;
+}
+
+.journeyFlowDialog div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem
+}
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
