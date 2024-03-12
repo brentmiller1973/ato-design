@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ATO Design</title>
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
+    <meta http-equiv='pragma' content='no-cache'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -56,10 +59,11 @@
 
     <h2>Portal Admin V2</h2>
     <section>
-        <h3>Start Screens:</h3>
+        <h3>Start Screen States:</h3>
         <div>
             <a href="Portal/startPage/startPage.html" target="_blank">Initial state of Start Page</a>
         </div>
+        <div><b>Identity Verification Status: </b>(1) Call Started</div>
         <ul>
             <li>The white display area has reduced padding on the top (this is consistent with all ATO admin pages).</li>
             <li>We also want to extend the white work area as far down the page as possible to stay consistent through-out UI.</li>
@@ -71,6 +75,7 @@
         <div>
             <a href="Portal/startPageSessionsExpired/startPage.html" target="_blank">Start Page with expired session allotment</a>
         </div>
+        <div><b>Identity Verification Status: </b>(1) Call Started</div>
         <ul>
             <li>Same updates to the initial state of Start Page.</li>
             <li>When user has used up their allotment of sessions, a modal will load on page load alerting them.</li>
@@ -84,13 +89,79 @@
 
 
     <section>
-        <h3>Workspace Screens:</h3>
+        <h3>Workspace Screen States:</h3>
+        <div>
+            <a href="Portal/workspacePageOne/workspacePage.html" target="_blank">Initial Workspace Page after clicking the "Trusonafy" button on the previous screen.</a>
+        </div>
+        <div><b>Identity Verification Status: </b>(1) Call Started (before "Copy Link" button is clicked), (2) Verification Created (after "Copy Link" button is clicked).</div>
+        <ul>
+            <li>Same button, modal and help updates like in the Start Page.</li>
+            <li>"ATO Protect - Trusonafication Workspace" tile added. </li>
+            <li>Initially the page will not show the status table.</li>
+            <li>The link text is prevented from being selected and copied.  Forcing the user to click the "Copy Link" button instead</li>
+            <li>The "+ New" button is hidden at this state.</li>
+            <li>In this demo, click the "Copy Link" button, and you will be taken to the next state described next</li>
+        </ul>
 
+        <div>
+            <a href="Portal/workspacePageTwo/workspacePage.html" target="_blank">Workspace Page after clicking the "Copy Link" button on the previous state.</a>
+        </div>
+        <div><b>Identity Verification Status: </b>(2) Verification Created (after "Copy Link" button is clicked in previous state).</div>
+        <ul>
+            <li>Same button, modal and help updates like in the previous workspace state.</li>
+            <li>The "+ New" button is now shown.</li>
+            <li>In the demo of this page, click the "+ New" button, and you will see a confirmation modal - to prevent an accidental forfeit of the current session.</li>
+            <li>Status table is now shown.</li>
+        </ul>
+
+        <div>
+            <a href="Portal/workspacePageThree/workspacePage.html" target="_blank">Workspace Page after end user clicks on the link sent to them.</a>
+        </div>
+        <div><b>Identity Verification Status: </b>(5) Caller has clicked link.</div>
+        <ul>
+            <li>Same button, modal and help updates like in the previous workspace state.</li>
+            <li>Device table and map are now shown.</li>
+        </ul>
+
+        <div>
+            <a href="Portal/workspacePageFour/workspacePage.html" target="_blank">Workspace Page when end user is engaged with the scanning flow.</a>
+        </div>
+        <div><b>Identity Verification Status: </b>(6) Caller is primed to scan ID. | (7) Caller is primed to allow camera. | (8) Caller allows camera in OS modal. | (9) Scanner initiates | (10) Scanning in progress</div>
+        <ul>
+            <li>Same button, modal and help updates like in the previous workspace state.</li>
+            <li>This states represents 5 status that the scan status can be conveyed to the admin, so they can be updated to where the end user is at in the scanning process.</li>
+            <li>Note: the demo page only shows status 6: Caller is primed to scan ID.  However, the idea is that the client application will send back progress reports that the admin will subscribe too and update the status.</li>
+        </ul>
     </section>
 
-    <p>&nbsp;</p>
+    <h2>References</h2>
+    <section>
+        <h3>SonaScan (Scanning status indicators):</h3>
+        <div>
+            <table>
+                <tbody>
+                <tr><td>Status</td></tr>
+                <tr><td>0</td><td>Not started</td></tr>
+                <tr><td>1</td><td>Call Started</td></tr>
+                <tr><td>2</td><td>Verification Created</td></tr>
+                <tr><td>3</td><td>Time elapses...</td></tr>
+                <tr><td>4</td><td>Caller receives link</td></tr>
+                <tr><td>5</td><td>Caller clicks link</td></tr>
+                <tr><td>6</td><td>Caller is primed to scan ID</td></tr>
+                <tr><td>7</td><td>Caller is primed to allow camera</td></tr>
+                <tr><td>8</td><td>Caller allows camera in OS modal</td></tr>
+                <tr><td>9</td><td>Scanner initiates</td></tr>
+                <tr><td>10</td><td>Scanner is on, and Caller begins scanning</td></tr>
+                <tr><td>11</td><td>Scanning completes successfully</td></tr>
+                <tr><td>12</td><td>Scanning completes unsuccessfully 1</td></tr>
+                <tr><td>13</td><td>Scanning completes unsuccessfully 2+</td></tr>
+                </tbody>
+            </table>
 
-    <p>&nbsp;</p>
+        </div>
+
+
+    </section>
 </div>
 </body>
 </html>
