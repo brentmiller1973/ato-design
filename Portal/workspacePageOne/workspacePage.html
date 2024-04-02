@@ -604,21 +604,22 @@
                                        signed-stream-name="ImNjNjk4MzdhLWJkYjYtNDI5My05YTk0LTMzNDc2MWVmNzMxOSI=--acbf8cc2aa5b6e7493ba7b3a3ed6051c71aba1c3a3efdff46dba8ab15b850eb1"
                                        connected=""></turbo-cable-stream-source>
 
-            <div id="workspace-area" class="p-8 pt-4 bg-white rounded-md filter drop-shadow-md relative" style="height: calc(100vh - 175px);">
-                <div class="flex justify-between items-center">
-                    <span class="font-sofia font-normal text-xl sm:text-2xl text-secure">
+            <div id="workspace-area" class="p-2 lg:px-8 pt-4 bg-white rounded-md filter drop-shadow-md relative"
+                 style="min-height: calc(100vh - 175px);padding-bottom:7.5rem">
+                <div class="flex justify-between flex-wrap items-center mb-8 px-2">
+                        <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure work-space-title">
                         ATO Protect - Trusonafication Workspace
-                    </span>
-                    <div class="flex gap-7">
+                    </h1>
+                    <div class="flex gap-4">
                         <button type="button"
                                 id="helpTopBtn"
-                                class="text-xl border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                class="text-sm  border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                         > Need Help?
                         </button>
                         <button type="button"
                                 id="newSessionBtn"
-                                class="hidden text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                        > + New
+                                class="hidden text-sm text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        > + New Trusonafication
                         </button>
 
                         <style>
@@ -717,7 +718,7 @@
 
                         <!-- Modal Dialog -->
                         <dialog id="videoModal" class="rounded-lg overflow-hidden bg-white shadow-md p-8"
-                                style="width: 65%;height: auto">
+                                style="width: auto;height: auto">
                             <div class="flex flex-col h-full">
                                 <!-- Close button -->
                                 <div class="flex justify-end p-2">
@@ -732,11 +733,20 @@
                                     </button>
                                 </div>
                                 <!-- YouTube Video Iframe (actual video may be self-hosted, in which case, just use a video element) -->
-                                <div class="flex justify-center items-center flex-grow">
-                                    <iframe class="w-full h-full"
-                                            src="https://www.youtube.com/embed/Zr81awqHd7U?rel=0"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                                <div class="flex flex-col gap-7 justify-start items-center flex-grow">
+                                    <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure">ATO Protect
+                                        Help</h1>
+                                    <iframe class="w-full"
+                                            src="https://player.vimeo.com/video/922754806?h=746cadcd78&amp;badge=0&amp;player_id=0&amp;app_id=58479"
+                                            frameborder="0"
+                                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                            style="width:100%;height:320px;margin:0;padding:0;"
+                                            title="ATO Protect Starter Guide">
+                                    </iframe>
+                                    <a title="More help"
+                                       class="underline block text-blue-600 dark:text-blue-500 hover:underline"
+                                       href="https://help.trusona.com/support/solutions/articles/43000723863-ato-protect-faq"
+                                       target="_blank">Visit our FAQ page for more information.</a>
                                 </div>
                             </div>
                         </dialog>
@@ -783,10 +793,10 @@
                                 </div>
                                 <div>
                                     <!-- Header -->
-                                    <h2 class="text-lg font-semibold mt-0">Create a new session?</h2>
+                                    <h2 class="text-lg font-semibold mt-0">Create a new Trusonafication?</h2>
                                     <!-- Paragraph -->
                                     <p class="mt-2 text-ferrite max-w-md text-left">Are you sure you want to create
-                                        a new session?</p>
+                                        a new Trusonafication?</p>
                                     <!-- Dismiss Button -->
 
                                     <div class="flex justify-end mt-8">
@@ -826,23 +836,29 @@
                         });
                     </script>
                 </div>
-                <div class="flex justify-between mt-6">
+                <div class="flex justify-between mt-6 link-card-reverse">
 
-                    <div>
-                        <div class="">
-                            <label for="">Share this link with the caller and ask them to scan the BACK of their
-                                US/CAN driver license</label>
+                    <div class="flex gap-7 justify-start items-center flex-wrap">
+                        <div class="flex flex-col gap-1">
+                            <div class="">Share this link with the caller and ask them to scan the BACK of their
+                                    US/CAN driver license
+                            </div>
+                            <span class="no-copy underline text-sm" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</span>
                         </div>
-
-                        <code style="-webkit-user-select: none; -ms-user-select: none; user-select: none;"
-                              class="underline pt-4 text-sm mr-4" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</code>
-
                         <button type="button"
-                                id="copyLinkBtn"
-                                class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                        >
-                            Copy Link
+                                    id="copyLinkBtn"
+                                    class="text-sm  text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-3 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex justify-center items-center gap-3"
+                            >
+                                <span>Copy Link</span>
+                                <span class="icon-copy">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy"
+                                         viewBox="0 0 16 16">
+                                      <path fill-rule="evenodd"
+                                            d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"/>
+                                    </svg>
+                                  </span>
                         </button>
+
                         <script>
                             const copyLinkBtn = document.getElementById('copyLinkBtn');
                             copyLinkBtn.addEventListener('click', (event) => {

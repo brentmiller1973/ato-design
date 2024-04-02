@@ -603,24 +603,23 @@
                                        signed-stream-name="IjRlZGQwZGUxLTMwMTItNDhjMy04MDcyLTYzNzM0MDlmYTVkYyI=--ed0edd669d73d82cf16af8ae3df49f510e9bde83b7c8fa1ad0db3bc67fbfbc7d"
                                        connected=""></turbo-cable-stream-source>
 
-            <div id="workspace-area" class="p-8 pt-4 bg-white rounded-md filter drop-shadow-md relative"
+            <div id="workspace-area" class="p-4 lg:p-8 pt-4 bg-white rounded-md filter drop-shadow-md relative"
                  style="min-height: calc(100vh - 175px);padding-bottom:7.5rem">
                 <turbo-frame id="identity_verification">
-
-                    <div class="flex justify-between items-center">
-                    <span class="font-sofia font-normal text-xl sm:text-2xl text-secure">
+                    <div class="flex justify-between flex-wrap items-center mb-8 px-2">
+                        <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure work-space-title">
                         ATO Protect - Trusonafication Workspace
-                    </span>
-                        <div class="">
+                    </h1>
+                        <div class="flex gap-4">
                             <button type="button"
                                     id="helpTopBtn"
-                                    class="mr-6 text-xl border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                    class="text-sm border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                             > Need Help?
                             </button>
                             <button type="button"
                                     id="newSessionBtn"
-                                    class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                            > + New
+                                    class="text-sm text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            > + New Trusonafication
                             </button>
 
                             <style>
@@ -719,7 +718,7 @@
 
                             <!-- Modal Dialog -->
                             <dialog id="videoModal" class="rounded-lg overflow-hidden bg-white shadow-md p-8"
-                                    style="width: 65%;height: auto">
+                                    style="width: auto;height: auto">
                                 <div class="flex flex-col h-full">
                                     <!-- Close button -->
                                     <div class="flex justify-end p-2">
@@ -734,11 +733,20 @@
                                         </button>
                                     </div>
                                     <!-- YouTube Video Iframe (actual video may be self-hosted, in which case, just use a video element) -->
-                                    <div class="flex justify-center items-center flex-grow">
-                                        <iframe class="w-full h-full"
-                                                src="https://www.youtube.com/embed/Zr81awqHd7U?rel=0"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                                    <div class="flex flex-col gap-7 justify-start items-center flex-grow">
+                                        <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure">ATO Protect
+                                            Help</h1>
+                                        <iframe class="w-full"
+                                                src="https://player.vimeo.com/video/922754806?h=746cadcd78&amp;badge=0&amp;player_id=0&amp;app_id=58479"
+                                                frameborder="0"
+                                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                                style="width:100%;height:320px;margin:0;padding:0;"
+                                                title="ATO Protect Starter Guide">
+                                        </iframe>
+                                        <a title="More help"
+                                           class="underline block text-blue-600 dark:text-blue-500 hover:underline"
+                                           href="https://help.trusona.com/support/solutions/articles/43000723863-ato-protect-faq"
+                                           target="_blank">Visit our FAQ page for more information.</a>
                                     </div>
                                 </div>
                             </dialog>
@@ -785,10 +793,10 @@
                                     </div>
                                     <div>
                                         <!-- Header -->
-                                        <h2 class="text-lg font-semibold mt-0">Create a new session?</h2>
+                                        <h2 class="text-lg font-semibold mt-0">Create a new Trusonafication?</h2>
                                         <!-- Paragraph -->
                                         <p class="mt-2 text-ferrite max-w-md text-left">Are you sure you want to create
-                                            a new session?</p>
+                                            a new Trusonafication?</p>
                                         <!-- Dismiss Button -->
 
                                         <div class="flex justify-end mt-8">
@@ -828,22 +836,26 @@
                             });
                         </script>
                     </div>
-                    <div class="flex justify-between mt-6">
 
-                        <div>
-                            <div class="">
-                                <label for="">Share this link with the caller and ask them to scan the BACK of their
-                                    US/CAN driver license</label>
+                    <div class="flex justify-between mt-6 link-card-reverse">
+                        <div class="flex gap-7 justify-start items-center flex-wrap">
+                            <div class="flex flex-col gap-1">
+                                <div class="">Share this link with the caller and ask them to scan the BACK of their
+                                    US/CAN driver license
+                                </div>
+                                <span class="no-copy underline text-sm" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</span>
                             </div>
-
-                            <code style="-webkit-user-select: none; -ms-user-select: none; user-select: none;"
-                                  class="underline pt-4 text-sm mr-4" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</code>
-
                             <button type="button"
                                     id="copyLinkBtn"
-                                    class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                    class="text-sm  text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-3 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex justify-center items-center gap-3"
                             >
-                                Copy Link
+                                <span>Copy Link</span>
+                                <span class="icon-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-check-lg" viewBox="0 0 16 16">
+                                  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                                </svg>
+                                  </span>
                             </button>
                         </div>
 
@@ -851,353 +863,352 @@
 
                     <turbo-frame id="identity_verification_results">
 
-                        <div id="foo">
+                        <div id="foo" >
                             <div id="device-data" data-devices="data-verification-map-target=&quot;devices&quot;">
-
-                                <table class="pb-10 mt-6">
-                                    <tbody>
-                                    <tr>
-                                        <td colspan="2"><label class="pr-5 text-2xl mt-6">Scan Only Info</label></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="pr-5">Status</label></td>
-                                        <td>Caller has clicked link.</td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
-
-                                <br>&nbsp;<br>
-
-                                <h1 class="text-2xl mt-6 inline-block">Devices</h1> - Sorted by order clicked, latest on
-                                top
-
-                                <div class="overflow-auto">
-                                    <table class="mt-8 table-fixed min-w-full border-b border-gray-200"
-                                           id="organization--table">
-                                        <thead>
-                                        <tr class="text-left text-white font-light bg-secure">
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        IP Address
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        IP Country
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        IP Region
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        IP City
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Locale
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Time Zone
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Date/Time
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Platform
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Type
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        OS
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        ISP Name
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Screen Size
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        User Agent
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Date Time String
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                        </tr>
-                                        </thead>
-                                        <tbody class="divide-y divide-gray-200 bg-white" id="-table-body">
+                                <div class="mt-6 link-card">
+                                    <h2 class="font-sofia font-normal text-lg">Scan Only Info</h2>
+                                    <table class="pb-10 mt-2">
+                                        <tbody>
                                         <tr>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">98.46.252.28
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">United
-                                                States
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Illinois</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Aurora</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">en-US</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                                America/Chicago (-6)
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">3/10/2024
-                                                12:44
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iPhone</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mobile Safari
-                                                17.3
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iOS 17.3</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">COMCAST-7922
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">844 X 390</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mozilla/5.0
-                                                (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15
-                                                (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Sun Mar 10
-                                                2024 12:44:53 GMT-0500 (Central Daylight Time)
-                                            </td>
+                                            <td><label class="pr-5 font-bold">Status:</label></td>
+                                            <td>Caller has clicked link.</td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
 
-                                <div data-controller="verification-map">
-                                    <div id="device-data"
-                                         data-devices="[{&quot;id&quot;:&quot;944497b1-9bdf-4116-9e46-5d24d625dd67&quot;,&quot;ip_address&quot;:&quot;98.46.252.28&quot;,&quot;city&quot;:&quot;Aurora&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;region&quot;:&quot;Illinois&quot;,&quot;isp&quot;:&quot;COMCAST-7922&quot;,&quot;platform&quot;:&quot;iPhone&quot;,&quot;language&quot;:&quot;en-US&quot;,&quot;display_height&quot;:844,&quot;browser_time_zone&quot;:&quot;America/Chicago&quot;,&quot;ip_address_time_zone&quot;:&quot;America/Chicago&quot;,&quot;display_width&quot;:390,&quot;browser_height&quot;:844,&quot;browser_width&quot;:390,&quot;browser&quot;:&quot;Mobile Safari 17.3&quot;,&quot;user_agent&quot;:&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1&quot;,&quot;latitude&quot;:41.7688,&quot;longitude&quot;:-88.3405,&quot;operating_system&quot;:&quot;iOS 17.3&quot;,&quot;date_time&quot;:&quot;3/10/2024 12:44&quot;,&quot;browser_date_time&quot;:&quot;Sun Mar 10 2024 12:44:53 GMT-0500 (Central Daylight Time)&quot;,&quot;browser_time_zone_with_offset&quot;:&quot;America/Chicago (-6)&quot;}]"
-                                         data-verification-map-target="devices">
+                                <div class="mt-6 link-card">
+                                    <h2 class="font-sofia font-normal text-lg mb-2 inline-block">Devices</h2> - Sorted by order clicked, latest on
+                                    top
 
-                                        <div id="summaries-data" data-summaries="[]"
-                                             data-verification-map-target="summaries">
+                                    <div class="overflow-auto">
+                                        <table class="no-wrap table-fixed min-w-full border-b border-gray-200 table-row-hover"
+                                               id="organization--table">
+                                            <thead>
+                                            <tr class="text-left text-white font-light bg-secure">
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
 
-                                            <div class="pt-3" style="width: 100%;"></div>
-                                            <div class="pt-3 pb-4 leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-                                                 id="mapid" style="width: 100%; height: 500px; position: relative;"
-                                                 tabindex="0">
-                                                <div class="leaflet-pane leaflet-map-pane"
-                                                     style="transform: translate3d(0px, 0px, 0px);">
-                                                    <div class="leaflet-pane leaflet-tile-pane">
-                                                        <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
-                                                            <div class="leaflet-tile-container leaflet-zoom-animated"
-                                                                 style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
-                                                                <img alt="" src="./Management Portal_files/3048.png"
-                                                                     class="leaflet-tile leaflet-tile-loaded"
-                                                                     style="width: 256px; height: 256px; transform: translate3d(710px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(1).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047.png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(710px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(1).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049.png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(710px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(1).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(2).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(3).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(2).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(3).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(2).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(3).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(4).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(5).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(4).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(5).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(4).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(5).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(6).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(7).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(6).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(7).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(6).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(7).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, 486px, 0px); opacity: 1;">
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP Address
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP Country
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP Region
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP City
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Locale
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Time Zone
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Date/Time
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Platform
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Type
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            OS
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            ISP Name
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Screen Size
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            User Agent
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Date Time String
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-200 bg-white" id="-table-body">
+                                            <tr>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">98.46.252.28
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">United
+                                                    States
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Illinois</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Aurora</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">en-US</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                    America/Chicago (-6)
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">3/10/2024
+                                                    12:44
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iPhone</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mobile Safari
+                                                    17.3
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iOS 17.3</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">COMCAST-7922
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">844 X 390</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mozilla/5.0
+                                                    (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15
+                                                    (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Sun Mar 10
+                                                    2024 12:44:53 GMT-0500 (Central Daylight Time)
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div data-controller="verification-map">
+                                        <div id="device-data"
+                                             data-devices="[{&quot;id&quot;:&quot;944497b1-9bdf-4116-9e46-5d24d625dd67&quot;,&quot;ip_address&quot;:&quot;98.46.252.28&quot;,&quot;city&quot;:&quot;Aurora&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;region&quot;:&quot;Illinois&quot;,&quot;isp&quot;:&quot;COMCAST-7922&quot;,&quot;platform&quot;:&quot;iPhone&quot;,&quot;language&quot;:&quot;en-US&quot;,&quot;display_height&quot;:844,&quot;browser_time_zone&quot;:&quot;America/Chicago&quot;,&quot;ip_address_time_zone&quot;:&quot;America/Chicago&quot;,&quot;display_width&quot;:390,&quot;browser_height&quot;:844,&quot;browser_width&quot;:390,&quot;browser&quot;:&quot;Mobile Safari 17.3&quot;,&quot;user_agent&quot;:&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1&quot;,&quot;latitude&quot;:41.7688,&quot;longitude&quot;:-88.3405,&quot;operating_system&quot;:&quot;iOS 17.3&quot;,&quot;date_time&quot;:&quot;3/10/2024 12:44&quot;,&quot;browser_date_time&quot;:&quot;Sun Mar 10 2024 12:44:53 GMT-0500 (Central Daylight Time)&quot;,&quot;browser_time_zone_with_offset&quot;:&quot;America/Chicago (-6)&quot;}]"
+                                             data-verification-map-target="devices">
+
+                                            <div id="summaries-data" data-summaries="[]"
+                                                 data-verification-map-target="summaries">
+
+                                                <div class="pt-3" style="width: 100%;"></div>
+                                                <div class="pt-3 pb-4 leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                                                     id="mapid" style="width: 100%; height: 500px; position: relative;"
+                                                     tabindex="0">
+                                                    <div class="leaflet-pane leaflet-map-pane"
+                                                         style="transform: translate3d(0px, 0px, 0px);">
+                                                        <div class="leaflet-pane leaflet-tile-pane">
+                                                            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                                                <div class="leaflet-tile-container leaflet-zoom-animated"
+                                                                     style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
+                                                                    <img alt="" src="./Management Portal_files/3048.png"
+                                                                         class="leaflet-tile leaflet-tile-loaded"
+                                                                         style="width: 256px; height: 256px; transform: translate3d(710px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(1).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(966px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047.png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(710px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(1).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(966px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049.png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(710px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(1).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(966px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(2).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(454px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(3).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1222px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(2).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(454px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(3).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1222px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(2).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(454px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(3).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1222px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(4).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(198px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(5).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1478px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(4).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(198px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(5).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1478px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(4).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(198px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(5).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1478px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(6).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(-58px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(7).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1734px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(6).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(-58px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(7).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1734px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(6).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(-58px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(7).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1734px, 486px, 0px); opacity: 1;">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="leaflet-pane leaflet-overlay-pane"></div>
-                                                    <div class="leaflet-pane leaflet-shadow-pane"></div>
-                                                    <div class="leaflet-pane leaflet-marker-pane"><img
-                                                            src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0zNi42MTQgMTUuNjY5N0MzNi43MjcxIDE1LjU0NDYgMzYuODE1MSAxNS4zOTMgMzYuODcxOSAxNS4yMjU0QzM2LjkyODYgMTUuMDU3OCAzNi45NTI4IDE0Ljg3ODIgMzYuOTQyNyAxNC42OTg5QzM2LjkzMjcgMTQuNTE5NyAzNi44ODg3IDE0LjM0NSAzNi44MTM2IDE0LjE4N0MzNi43Mzg2IDE0LjAyOSAzNi42MzQ0IDEzLjg5MTQgMzYuNTA4MiAxMy43ODM3QzMxLjcxMTYgOS44MTEwNSAyNS45MzA5IDcuNjc2MzUgMjAgNy42ODc1MUMxMy44MzI3IDcuNjg3NTEgOC4xMjY3NCA5Ljk0NzY0IDMuNDkxNzQgMTMuNzgzN0MzLjM2NTM5IDEzLjg5MTIgMy4yNjEwMiAxNC4wMjg3IDMuMTg1OCAxNC4xODY2QzMuMTEwNTkgMTQuMzQ0NSAzLjA2NjMyIDE0LjUxOTEgMy4wNTYwNSAxNC42OTg0QzMuMDQ1NzkgMTQuODc3NiAzLjA2OTc3IDE1LjA1NzMgMy4xMjYzNCAxNS4yMjVDMy4xODI5MSAxNS4zOTI3IDMuMjcwNzMgMTUuNTQ0NCAzLjM4Mzc0IDE1LjY2OTdDMy41ODA4NCAxNS44ODk0IDMuODM5NzIgMTYuMDIyNyA0LjExNDcyIDE2LjA0NjFDNC4zODk3MSAxNi4wNjk2IDQuNjYzMTMgMTUuOTgxNiA0Ljg4Njc0IDE1Ljc5NzhDOS4yODU5NSAxMi4xODI0IDE0LjU3NSAxMC4yNDA5IDIwIDEwLjI1QzI1LjY0MDcgMTAuMjUgMzAuODYwNyAxMi4zMDUxIDM1LjExMSAxNS43OTUzQzM1LjU3MjIgMTYuMTc0NSAzNi4yMTM1IDE2LjEyODQgMzYuNjE0IDE1LjY2OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzEuNzY1MyAyMS4xOTQ0QzMxLjg4MTIgMjEuMDY3IDMxLjk3MDggMjAuOTExOCAzMi4wMjc0IDIwLjc0MDFDMzIuMDg0MSAyMC41NjgzIDMyLjEwNjUgMjAuMzg0MyAzMi4wOTI5IDIwLjIwMTVDMzIuMDc5MyAyMC4wMTg3IDMyLjAzMDEgMTkuODQxNiAzMS45NDg5IDE5LjY4MzFDMzEuODY3OCAxOS41MjQ3IDMxLjc1NjYgMTkuMzg4OCAzMS42MjM1IDE5LjI4NTRDMjguMTYzNiAxNi43MjY2IDI0LjEyNTQgMTUuMzY4MSAyMCAxNS4zNzVDMTUuNzEzOCAxNS4zNzUgMTEuNzIgMTYuODEgOC4zNzY1MSAxOS4yODU0QzguMjQyNzUgMTkuMzg4MiA4LjEzMDkyIDE5LjUyMzggOC4wNDkyNCAxOS42ODIzQzcuOTY3NTYgMTkuODQwOCA3LjkxODEgMjAuMDE4MSA3LjkwNDUxIDIwLjIwMTNDNy44OTA5MSAyMC4zODQ0IDcuOTEzNTIgMjAuNTY4NyA3Ljk3MDY3IDIwLjc0MDVDOC4wMjc4MiAyMC45MTI0IDguMTE4MDYgMjEuMDY3NSA4LjIzNDc2IDIxLjE5NDRDOC40MjY0NyAyMS40MDc1IDguNjc2MDggMjEuNTQwMSA4Ljk0MjY1IDIxLjU3MDNDOS4yMDkyMSAyMS42MDA2IDkuNDc2ODkgMjEuNTI2OCA5LjcwMTc2IDIxLjM2MUMxMi43NzUzIDE5LjExOSAxNi4zNTAxIDE3LjkzMDYgMjAgMTcuOTM3NUMyMy42NDkyIDE3LjkzMTEgMjcuMjIzMSAxOS4xMTk0IDMwLjI5NiAyMS4zNjFDMzAuNzU5NSAyMS42OTkyIDMxLjM3NiAyMS42Mzc3IDMxLjc2NTMgMjEuMTk0NFpNMjYuODUzNSAyNi43ODg0QzI3LjM2MiAyNi4yMDkyIDI3LjI2OTggMjUuMjM4MSAyNi42Mjg1IDI0Ljg2NjVDMjQuNTc0NiAyMy42NzkxIDIyLjMwMzQgMjMuMDYxIDIwIDIzLjA2MjVDMTcuNjE1IDIzLjA2MjUgMTUuMzYwNSAyMy43MTM0IDEzLjM3MTUgMjQuODY2NUMxMi43MzAzIDI1LjIzODEgMTIuNjM4IDI2LjIwOTIgMTMuMTQ2NSAyNi43ODg0TDEzLjE4MDMgMjYuODI2OEMxMy41NDAzIDI3LjIzNjggMTQuMDk2IDI3LjMxMzcgMTQuNTU1IDI3LjA1NzRDMTYuMjUwNCAyNi4xMTM0IDE4LjExMjkgMjUuNjIzNCAyMCAyNS42MjVDMjEuOTUzIDI1LjYyNSAyMy44MDI1IDI2LjE0MDEgMjUuNDQ1IDI3LjA2QzI1LjkwMTggMjcuMzE2MiAyNi40NTc1IDI3LjIzOTQgMjYuODE3NSAyNi44MjY4TDI2Ljg1MzUgMjYuNzg4NFpNMjIuMzg1IDMxLjg3NzVDMjIuODI2IDMxLjM3NTIgMjIuODMwNSAzMC41NDUgMjIuMjk1IDMwLjE4NjJDMjEuNjAwNCAyOS43MTY5IDIwLjgwNzcgMjkuNDY5IDIwIDI5LjQ2ODdDMTkuMTkyMyAyOS40NjkgMTguMzk5NiAyOS43MTY5IDE3LjcwNSAzMC4xODYyQzE3LjE2OTUgMzAuNTQ1IDE3LjE3NCAzMS4zNzUyIDE3LjYxNSAzMS44Nzc1TDE5LjIwMzUgMzMuNjg2NkMxOS40MTQ1IDMzLjkyNjggMTkuNzAwNiAzNC4wNjE4IDE5Ljk5ODkgMzQuMDYxOEMyMC4yOTcyIDM0LjA2MTggMjAuNTgzMyAzMy45MjY4IDIwLjc5NDMgMzMuNjg2NkwyMi4zODUgMzEuODc3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
-                                                            class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
-                                                            alt="Marker" tabindex="0" role="button"
-                                                            style="margin-left: 0px; margin-top: 0px; width: 32px; height: 32px; transform: translate3d(905px, 250px, 0px); z-index: 250;">
-                                                    </div>
-                                                    <div class="leaflet-pane leaflet-tooltip-pane"></div>
-                                                    <div class="leaflet-pane leaflet-popup-pane"></div>
-                                                    <div class="leaflet-proxy leaflet-zoom-animated"
-                                                         style="transform: translate3d(533955px, 780308px, 0px) scale(4096);"></div>
-                                                </div>
-                                                <div class="leaflet-control-container">
-                                                    <div class="leaflet-top leaflet-left">
-                                                        <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a
-                                                                class="leaflet-control-zoom-in"
-                                                                href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
-                                                                title="Zoom in" role="button" aria-label="Zoom in"
-                                                                aria-disabled="false"><span aria-hidden="true">+</span></a><a
-                                                                class="leaflet-control-zoom-out"
-                                                                href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
-                                                                title="Zoom out" role="button" aria-label="Zoom out"
-                                                                aria-disabled="false"><span aria-hidden="true">−</span></a>
+                                                        <div class="leaflet-pane leaflet-overlay-pane"></div>
+                                                        <div class="leaflet-pane leaflet-shadow-pane"></div>
+                                                        <div class="leaflet-pane leaflet-marker-pane"><img
+                                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0zNi42MTQgMTUuNjY5N0MzNi43MjcxIDE1LjU0NDYgMzYuODE1MSAxNS4zOTMgMzYuODcxOSAxNS4yMjU0QzM2LjkyODYgMTUuMDU3OCAzNi45NTI4IDE0Ljg3ODIgMzYuOTQyNyAxNC42OTg5QzM2LjkzMjcgMTQuNTE5NyAzNi44ODg3IDE0LjM0NSAzNi44MTM2IDE0LjE4N0MzNi43Mzg2IDE0LjAyOSAzNi42MzQ0IDEzLjg5MTQgMzYuNTA4MiAxMy43ODM3QzMxLjcxMTYgOS44MTEwNSAyNS45MzA5IDcuNjc2MzUgMjAgNy42ODc1MUMxMy44MzI3IDcuNjg3NTEgOC4xMjY3NCA5Ljk0NzY0IDMuNDkxNzQgMTMuNzgzN0MzLjM2NTM5IDEzLjg5MTIgMy4yNjEwMiAxNC4wMjg3IDMuMTg1OCAxNC4xODY2QzMuMTEwNTkgMTQuMzQ0NSAzLjA2NjMyIDE0LjUxOTEgMy4wNTYwNSAxNC42OTg0QzMuMDQ1NzkgMTQuODc3NiAzLjA2OTc3IDE1LjA1NzMgMy4xMjYzNCAxNS4yMjVDMy4xODI5MSAxNS4zOTI3IDMuMjcwNzMgMTUuNTQ0NCAzLjM4Mzc0IDE1LjY2OTdDMy41ODA4NCAxNS44ODk0IDMuODM5NzIgMTYuMDIyNyA0LjExNDcyIDE2LjA0NjFDNC4zODk3MSAxNi4wNjk2IDQuNjYzMTMgMTUuOTgxNiA0Ljg4Njc0IDE1Ljc5NzhDOS4yODU5NSAxMi4xODI0IDE0LjU3NSAxMC4yNDA5IDIwIDEwLjI1QzI1LjY0MDcgMTAuMjUgMzAuODYwNyAxMi4zMDUxIDM1LjExMSAxNS43OTUzQzM1LjU3MjIgMTYuMTc0NSAzNi4yMTM1IDE2LjEyODQgMzYuNjE0IDE1LjY2OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzEuNzY1MyAyMS4xOTQ0QzMxLjg4MTIgMjEuMDY3IDMxLjk3MDggMjAuOTExOCAzMi4wMjc0IDIwLjc0MDFDMzIuMDg0MSAyMC41NjgzIDMyLjEwNjUgMjAuMzg0MyAzMi4wOTI5IDIwLjIwMTVDMzIuMDc5MyAyMC4wMTg3IDMyLjAzMDEgMTkuODQxNiAzMS45NDg5IDE5LjY4MzFDMzEuODY3OCAxOS41MjQ3IDMxLjc1NjYgMTkuMzg4OCAzMS42MjM1IDE5LjI4NTRDMjguMTYzNiAxNi43MjY2IDI0LjEyNTQgMTUuMzY4MSAyMCAxNS4zNzVDMTUuNzEzOCAxNS4zNzUgMTEuNzIgMTYuODEgOC4zNzY1MSAxOS4yODU0QzguMjQyNzUgMTkuMzg4MiA4LjEzMDkyIDE5LjUyMzggOC4wNDkyNCAxOS42ODIzQzcuOTY3NTYgMTkuODQwOCA3LjkxODEgMjAuMDE4MSA3LjkwNDUxIDIwLjIwMTNDNy44OTA5MSAyMC4zODQ0IDcuOTEzNTIgMjAuNTY4NyA3Ljk3MDY3IDIwLjc0MDVDOC4wMjc4MiAyMC45MTI0IDguMTE4MDYgMjEuMDY3NSA4LjIzNDc2IDIxLjE5NDRDOC40MjY0NyAyMS40MDc1IDguNjc2MDggMjEuNTQwMSA4Ljk0MjY1IDIxLjU3MDNDOS4yMDkyMSAyMS42MDA2IDkuNDc2ODkgMjEuNTI2OCA5LjcwMTc2IDIxLjM2MUMxMi43NzUzIDE5LjExOSAxNi4zNTAxIDE3LjkzMDYgMjAgMTcuOTM3NUMyMy42NDkyIDE3LjkzMTEgMjcuMjIzMSAxOS4xMTk0IDMwLjI5NiAyMS4zNjFDMzAuNzU5NSAyMS42OTkyIDMxLjM3NiAyMS42Mzc3IDMxLjc2NTMgMjEuMTk0NFpNMjYuODUzNSAyNi43ODg0QzI3LjM2MiAyNi4yMDkyIDI3LjI2OTggMjUuMjM4MSAyNi42Mjg1IDI0Ljg2NjVDMjQuNTc0NiAyMy42NzkxIDIyLjMwMzQgMjMuMDYxIDIwIDIzLjA2MjVDMTcuNjE1IDIzLjA2MjUgMTUuMzYwNSAyMy43MTM0IDEzLjM3MTUgMjQuODY2NUMxMi43MzAzIDI1LjIzODEgMTIuNjM4IDI2LjIwOTIgMTMuMTQ2NSAyNi43ODg0TDEzLjE4MDMgMjYuODI2OEMxMy41NDAzIDI3LjIzNjggMTQuMDk2IDI3LjMxMzcgMTQuNTU1IDI3LjA1NzRDMTYuMjUwNCAyNi4xMTM0IDE4LjExMjkgMjUuNjIzNCAyMCAyNS42MjVDMjEuOTUzIDI1LjYyNSAyMy44MDI1IDI2LjE0MDEgMjUuNDQ1IDI3LjA2QzI1LjkwMTggMjcuMzE2MiAyNi40NTc1IDI3LjIzOTQgMjYuODE3NSAyNi44MjY4TDI2Ljg1MzUgMjYuNzg4NFpNMjIuMzg1IDMxLjg3NzVDMjIuODI2IDMxLjM3NTIgMjIuODMwNSAzMC41NDUgMjIuMjk1IDMwLjE4NjJDMjEuNjAwNCAyOS43MTY5IDIwLjgwNzcgMjkuNDY5IDIwIDI5LjQ2ODdDMTkuMTkyMyAyOS40NjkgMTguMzk5NiAyOS43MTY5IDE3LjcwNSAzMC4xODYyQzE3LjE2OTUgMzAuNTQ1IDE3LjE3NCAzMS4zNzUyIDE3LjYxNSAzMS44Nzc1TDE5LjIwMzUgMzMuNjg2NkMxOS40MTQ1IDMzLjkyNjggMTkuNzAwNiAzNC4wNjE4IDE5Ljk5ODkgMzQuMDYxOEMyMC4yOTcyIDM0LjA2MTggMjAuNTgzMyAzMy45MjY4IDIwLjc5NDMgMzMuNjg2NkwyMi4zODUgMzEuODc3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
+                                                                class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
+                                                                alt="Marker" tabindex="0" role="button"
+                                                                style="margin-left: 0px; margin-top: 0px; width: 32px; height: 32px; transform: translate3d(905px, 250px, 0px); z-index: 250;">
                                                         </div>
+                                                        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                                                        <div class="leaflet-pane leaflet-popup-pane"></div>
+                                                        <div class="leaflet-proxy leaflet-zoom-animated"
+                                                             style="transform: translate3d(533955px, 780308px, 0px) scale(4096);"></div>
                                                     </div>
-                                                    <div class="leaflet-top leaflet-right"></div>
-                                                    <div class="leaflet-bottom leaflet-left"></div>
-                                                    <div class="leaflet-bottom leaflet-right">
-                                                        <div class="leaflet-control-attribution leaflet-control"><a
-                                                                href="https://leafletjs.com/"
-                                                                title="A JavaScript library for interactive maps">
-                                                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                                 width="12" height="8" viewBox="0 0 12 8"
-                                                                 class="leaflet-attribution-flag">
-                                                                <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
-                                                                <path fill="#FFD500" d="M0 4h12v3H0z"></path>
-                                                                <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
-                                                            </svg>
-                                                            Leaflet</a> <span aria-hidden="true">|</span> Map data © <a
-                                                                href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-                                                            contributors
+                                                    <div class="leaflet-control-container">
+                                                        <div class="leaflet-top leaflet-left">
+                                                            <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a
+                                                                    class="leaflet-control-zoom-in"
+                                                                    href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
+                                                                    title="Zoom in" role="button" aria-label="Zoom in"
+                                                                    aria-disabled="false"><span aria-hidden="true">+</span></a><a
+                                                                    class="leaflet-control-zoom-out"
+                                                                    href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
+                                                                    title="Zoom out" role="button" aria-label="Zoom out"
+                                                                    aria-disabled="false"><span aria-hidden="true">−</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="leaflet-top leaflet-right"></div>
+                                                        <div class="leaflet-bottom leaflet-left"></div>
+                                                        <div class="leaflet-bottom leaflet-right">
+                                                            <div class="leaflet-control-attribution leaflet-control"><a
+                                                                    href="https://leafletjs.com/"
+                                                                    title="A JavaScript library for interactive maps">
+                                                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                                     width="12" height="8" viewBox="0 0 12 8"
+                                                                     class="leaflet-attribution-flag">
+                                                                    <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
+                                                                    <path fill="#FFD500" d="M0 4h12v3H0z"></path>
+                                                                    <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
+                                                                </svg>
+                                                                Leaflet</a> <span aria-hidden="true">|</span> Map data © <a
+                                                                    href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+                                                                contributors
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
+
                                         </div>
-
-
                                     </div>
+
                                 </div>
                             </div>
                         </div>

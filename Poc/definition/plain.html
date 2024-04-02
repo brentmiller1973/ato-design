@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Entry: Trusonafy</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end; /* Align the book page to the right */
+            height: 100vh;
+            padding-right: 5%; /* Simulate the binding of the book on the right */
+        }
+        .book-page {
+            position: relative; /* Enable absolute positioning inside */
+            width: 40vw; /* Adjust the width to simulate a book page */
+            height: 75vh; /* Some arbitrary height to make the page taller */
+            background: url('paper-texture.png');
+            padding: 40px;
+            margin-right: 1%; /* Give some space for the shadow */
+            box-shadow: -10px 0 15px -5px rgba(0, 0, 0, 0.5); /* Adjust the shadow for the right side */
+            border: 1px solid #ddd;
+            border-radius: 2px;
+            overflow-y: auto; /* Allow scrolling on the page if content is longer */
+        }
+        .section-letter, .page-number {
+            font-size: 32px;
+            color: #999;
+            position: absolute;
+            right: 20px;
+        }
+        .section-letter {
+            top: 20px;
+        }
+        .page-number {
+            bottom: 20px;
+        }
+        .entry {
+            /* Removed the column count for a single right side page view */
+        }
+        .term {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .pronunciation {
+            font-size: 18px;
+            color: #888;
+        }
+        .definition, .origin, .example-sentences {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .example-sentences {
+            text-indent: -20px;
+            padding-left: 20px;
+        }
+        hr {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="book-page">
+    <div class="section-letter">T</div>
+    <div class="entry">
+        <p class="term">Trusonafy</p>
+        <p class="pronunciation">/ˈtruːsəˌnæfaɪ/</p>
+        <hr>
+        <div class="definition">
+            <strong>verb</strong> <em>To verify the true identity of a person or entity through the process known as Trusonafication...</em>
+        </div>
+        <div class="origin">
+            <strong>Origin:</strong> Early 21st century; blend of "true," "persona," and "-fy," indicating the transformation process towards authenticity.
+        </div>
+        <div class="example-sentences">
+            Before granting access to the secure network, the company required all users to be trusonafied to ensure their identities matched their profiles.<br>
+            The new banking regulation mandates that all customers must be trusonafied before confirming a high-value wire to prevent identity theft and fraud.<br>
+            Providing a user privileged access to the systems requires Trusonafication.<br>
+            John, please Trusonafy this use before providing the information.
+        </div>
+    </div>
+    <div class="page-number">342</div>
+</div>
+</body>
+</html>

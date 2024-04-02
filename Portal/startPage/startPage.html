@@ -706,7 +706,7 @@
 
                         <!-- Modal Dialog -->
                         <dialog id="videoModal" class="rounded-lg overflow-hidden bg-white shadow-md p-8"
-                                style="width: 65%;height: auto">
+                                style="width: auto;height: auto">
                             <div class="flex flex-col h-full">
                                 <!-- Close button -->
                                 <div class="flex justify-end p-2">
@@ -721,11 +721,11 @@
                                     </button>
                                 </div>
                                 <!-- YouTube Video Iframe (actual video may be self-hosted, in which case, just use a video element) -->
-                                <div class="flex justify-center items-center flex-grow">
-                                    <iframe class="w-full h-full"
-                                            src="https://www.youtube.com/embed/Zr81awqHd7U?rel=0"
-                                            title="YouTube video player" frameborder="0"
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                                <div class="flex flex-col gap-7 justify-start items-center flex-grow">
+                                    <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure">ATO Protect Help</h1>
+                                    <iframe class="w-full" src="https://player.vimeo.com/video/922754806?h=746cadcd78&amp;badge=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="width:100%;height:320px;margin:0;padding:0;" title="ATO Protect Starter Guide">
+                                    </iframe>
+                                    <a title="More help" class="underline block text-blue-600 dark:text-blue-500 hover:underline" href="https://help.trusona.com/support/solutions/articles/43000723863-ato-protect-faq" target="_blank">Visit our FAQ page for more information.</a>
                                 </div>
                             </div>
                         </dialog>

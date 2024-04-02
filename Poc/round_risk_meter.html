@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /* Start demo css */
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+        body {
+            width: 100%;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: "Open Sans", sans-serif;
+            gap: 1.5rem;
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: #484550;
+            margin: 0;
+        }
+
+        h2 {
+            width: 600px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .selector {
+            display: flex;
+            width: 700px;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        /* End demo css */
+
+        /* Start real css */
+        .meter-container {
+            width: auto;
+            box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+            background-color: #f8f8f8;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .meter-inner {
+            width: 600px;
+            height: auto;
+        }
+
+        .meter-container h1 {
+            font-size: 30px;
+            font-weight: 600;
+            color: #484550;
+            padding: 0;
+            margin: 0;
+        }
+
+        .needle {
+            /* Ensures that the needle rotation is around its base */
+            transform-origin: 100px 100px;
+            transform: rotate(-90deg);
+            /* Smooth transition for the needle movement -- let's make it look like a sports car :-) */
+            transition: transform 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) .5s;
+        }
+
+        /* End demo css */
+
+    </style>
+</head>
+<body>
+<!-- Begin demo code -->
+<h1>Trusona Risk Score</h1>
+<h2>
+    You can set the meter either by a general level OR by an exact scale number (1 - 100)
+</h2>
+<div class="selector">
+    <div>
+        <select id="risk-level">
+            <option value="">Choose a level</option>
+            <option value="no_risk">No Risk</option>
+            <option value="low_risk">Low Risk</option>
+            <option value="high_risk">High Risk</option>
+        </select>
+        <button type="button" onclick="submitRiskLevel()">Submit</button>
+    </div>
+
+
+    <div>
+        <input type="range" id="rangeInput" min="0" max="100" value="0">
+        <span id="rangeValue">0</span>
+        <button type="button" onclick="submitRangeValue()">Submit</button>
+    </div>
+</div>
+<!-- End demo code -->
+
+<!-- Begin real code -->
+<section id="meter-one" class="meter-container">
+    <div class="meter-inner">
+        <svg class="risk-meter" viewBox="44.747 44.604 110.631 55.254" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="gauge-center-shadow" height="130%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="1"></feGaussianBlur>
+                    <feOffset dx="0" dy="-4" result="offsetblur"></feOffset>
+                    <feFlood flood-color="rgba(0,0,0,0.28)" result="color"></feFlood>
+                    <feComposite in="color" in2="offsetblur" operator="in" result="shadow"></feComposite>
+                    <feBlend in="SourceGraphic" in2="shadow" mode="normal"></feBlend>
+                </filter>
+            </defs>
+            <circle cx="100" cy="100" r="45" fill="none" stroke="#E3C342" stroke-width="20" stroke-dasharray="141.3"
+                    stroke-dashoffset="141.3"></circle>
+            <circle cx="100" cy="100" r="45" fill="none" stroke="#D1535C" stroke-width="20" stroke-dasharray="141.3"
+                    stroke-dashoffset="47.1"></circle>
+            <circle cx="100" cy="100" r="45" fill="none" stroke="#6DAD81" stroke-width="20" stroke-dasharray="141.3"
+                    stroke-dashoffset="-47.1"></circle>
+            <circle cx="100" cy="100" r="35" fill="#f8f8f8" filter="url(#gauge-center-shadow)"></circle>
+            <line class="needle" x1="100" y1="100" x2="100" y2="50" stroke="#f8f8f8" stroke-width="2"
+                  stroke-linecap="round"></line>
+            <g transform="matrix(1, 0, 0, 1, -0.042571, -2.603626)">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M 96.563 83.844 L 104.249 83.844 L 104.249 83.299 L 95.986 83.299 C 95.986 83.567 96.206 83.844 96.563 83.844 Z"
+                      fill="#7B46D1" style=""></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M 100.41 89.547 L 100.98 89.547 L 100.98 84.386 L 100.41 84.386 L 100.41 89.547 Z"
+                      fill="#7B46D1" style=""></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M 99.269 89.005 C 99.269 89.344 99.568 89.548 99.839 89.548 L 99.839 84.386 L 99.269 84.386 L 99.269 89.005 Z"
+                      fill="#7B46D1" style=""></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M 104.826 84.387 L 101.551 84.387 L 101.551 90.09 L 99.84 90.09 C 99.231 90.09 98.698 89.63 98.698 89.005 L 98.698 84.387 L 96.563 84.387 C 95.914 84.387 95.422 83.886 95.422 83.302 L 95.422 81.675 L 103.685 81.675 C 104.313 81.675 104.826 82.163 104.826 82.759 L 104.826 84.387 Z M 100.124 78.619 C 96.213 78.619 93.042 81.633 93.042 85.351 C 93.042 89.069 96.213 92.083 100.124 92.083 C 104.035 92.083 107.206 89.069 107.206 85.351 C 107.206 81.633 104.035 78.619 100.124 78.619 Z"
+                      fill="#7B46D1" style=""></path>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M 103.685 82.217 L 95.992 82.217 L 95.992 82.759 L 104.255 82.759 C 104.255 82.469 104.01 82.217 103.685 82.217 Z"
+                      fill="#7B46D1" style=""></path>
+            </g>
+        </svg>
+    </div>
+    <h1>&nbsp;&nbsp;</h1>
+</section>
+
+<script>
+    function setMeterByNumericValue(element, value) {
+        const h1 = element.querySelector('h1');
+        const needle = element.querySelector('.needle');
+
+        if (value < 33) {
+            h1.innerHTML = `<span style="color: #6DAD81">No Risk</span>`
+        } else if (value > 32 && value < 67) {
+            h1.innerHTML = `<span style="color: #E3C342">Low Risk</span>`
+        } else {
+            h1.innerHTML = `<span style="color: #D1535C">High Risk</span>`
+        }
+
+        // Offset the angle by 90 degrees so that 0 points to the start of the green section.
+        const offset = 90;
+        // Each section represents 1/3 of 100, so 33.33 units per section.
+        // Map the value (1-100) to angle (-90-90 degrees).
+        const angle = ((value * 180) / 100) - offset;
+        // Set the needle's rotation based on the calculated angle.
+        // The transform-origin is adjusted to be the center of the base of the needle.
+        needle.style.transform = `rotate(${angle}deg)`;
+        needle.style.transformOrigin = '100px 100px';
+    }
+
+    function setMeterByLevel(element, value) {
+        const h1 = element.querySelector('h1');
+        let num_val = 0;
+        if (value === 'no_risk') {
+            h1.innerHTML = `<span style="color: #6DAD81">No Risk</span>`
+            num_val = 16;
+        } else if (value === 'low_risk') {
+            h1.innerHTML = `<span style="color: #E3C342">Low Risk</span>`
+            num_val = 50;
+        } else {
+            h1.innerHTML = `<span style="color: #D1535C">High Risk</span>`
+            num_val = 84;
+        }
+
+        const needle = element.querySelector('.needle');
+        // Offset the angle by 90 degrees so that 0 points to the start of the green section.
+        const offset = 90;
+        // Each section represents 1/3 of 100, so 33.33 units per section.
+        // Map the value (1-100) to angle (-90-90 degrees).
+        const angle = ((num_val * 180) / 100) - offset;
+        // Set the needle's rotation based on the calculated angle.
+        // The transform-origin is adjusted to be the center of the base of the needle.
+        needle.style.transform = `rotate(${angle}deg)`;
+        needle.style.transformOrigin = '100px 100px';
+    }
+
+
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     setMeterByNumericValue(document.getElementById('meter-one'), 20);
+    // });
+
+    function submitRiskLevel() {
+        const riskLevel = document.getElementById('risk-level').value;
+        setMeterByLevel(document.getElementById('meter-one'), riskLevel);
+        // Implement what happens when the submit button is clicked
+    }
+
+    function submitRangeValue() {
+        const rangeInput = document.getElementById('rangeInput');
+        setMeterByNumericValue(document.getElementById('meter-one'), rangeInput.value);
+    }
+
+    function updateRangeValue(value) {
+        document.getElementById('rangeValue').innerText = value;
+    }
+
+    // Get the range input element
+    const rangeInput = document.getElementById('rangeInput');
+    // Update the display whenever the range value changes
+    rangeInput.addEventListener('input', function () {
+        updateRangeValue(rangeInput.value);
+    });
+</script>
+<!-- End real code -->
+</body>
+</html>

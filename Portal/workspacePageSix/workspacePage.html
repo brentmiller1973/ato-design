@@ -104,6 +104,8 @@
     <meta name="csrf-token"
           content="dAYUkPJpdxMedLucBfCd9EPk5vV3-UQ-1AhAda1y26L-YWeuAriav4CSpg2txLubmrBalJuUhljV6uVk2SxSDw">
     <script type="module">import "leaflet"</script>
+    <script type="application/javascript" src="../../resources/horzontal_meter.js"></script>
+    <script type="application/javascript" src="../../resources/round_meter.js"></script>
 </head>
 
 <body class="h-full bg-tilt font-sofia text-ferrite" data-controller="js"
@@ -603,23 +605,23 @@
                                        signed-stream-name="IjRlZGQwZGUxLTMwMTItNDhjMy04MDcyLTYzNzM0MDlmYTVkYyI=--ed0edd669d73d82cf16af8ae3df49f510e9bde83b7c8fa1ad0db3bc67fbfbc7d"
                                        connected=""></turbo-cable-stream-source>
 
-            <div id="workspace-area" class="p-8 pt-4 bg-white rounded-md filter drop-shadow-md relative"
+            <div id="workspace-area" class="p-2 lg:px-8 pt-4 bg-white rounded-md filter drop-shadow-md relative"
                  style="min-height: calc(100vh - 175px);padding-bottom:7.5rem">
                 <turbo-frame id="identity_verification">
-                    <div class="flex justify-between items-center">
-                    <span class="font-sofia font-normal text-xl sm:text-2xl text-secure">
+                    <div class="flex justify-between flex-wrap items-center mb-8 px-2">
+                        <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure work-space-title">
                         ATO Protect - Trusonafication Workspace
-                    </span>
-                        <div class="">
+                    </h1>
+                        <div class="flex gap-4">
                             <button type="button"
                                     id="helpTopBtn"
-                                    class="mr-6 text-xl border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                    class="text-sm border border-gray-300 focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
                             > Need Help?
                             </button>
                             <button type="button"
                                     id="newSessionBtn"
-                                    class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-                            > + New
+                                    class="text-sm text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-2 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                            > + New Trusonafication
                             </button>
 
                             <style>
@@ -718,7 +720,7 @@
 
                             <!-- Modal Dialog -->
                             <dialog id="videoModal" class="rounded-lg overflow-hidden bg-white shadow-md p-8"
-                                    style="width: 65%;height: auto">
+                                    style="width: auto;height: auto">
                                 <div class="flex flex-col h-full">
                                     <!-- Close button -->
                                     <div class="flex justify-end p-2">
@@ -733,11 +735,20 @@
                                         </button>
                                     </div>
                                     <!-- YouTube Video Iframe (actual video may be self-hosted, in which case, just use a video element) -->
-                                    <div class="flex justify-center items-center flex-grow">
-                                        <iframe class="w-full h-full"
-                                                src="https://www.youtube.com/embed/Zr81awqHd7U?rel=0"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+                                    <div class="flex flex-col gap-7 justify-start items-center flex-grow">
+                                        <h1 class="font-sofia font-normal text-xl sm:text-2xl text-secure">ATO Protect
+                                            Help</h1>
+                                        <iframe class="w-full"
+                                                src="https://player.vimeo.com/video/922754806?h=746cadcd78&amp;badge=0&amp;player_id=0&amp;app_id=58479"
+                                                frameborder="0"
+                                                allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                                                style="width:100%;height:320px;margin:0;padding:0;"
+                                                title="ATO Protect Starter Guide">
+                                        </iframe>
+                                        <a title="More help"
+                                           class="underline block text-blue-600 dark:text-blue-500 hover:underline"
+                                           href="https://help.trusona.com/support/solutions/articles/43000723863-ato-protect-faq"
+                                           target="_blank">Visit our FAQ page for more information.</a>
                                     </div>
                                 </div>
                             </dialog>
@@ -784,10 +795,10 @@
                                     </div>
                                     <div>
                                         <!-- Header -->
-                                        <h2 class="text-lg font-semibold mt-0">Create a new session?</h2>
+                                        <h2 class="text-lg font-semibold mt-0">Create a new Trusonafication?</h2>
                                         <!-- Paragraph -->
                                         <p class="mt-2 text-ferrite max-w-md text-left">Are you sure you want to create
-                                            a new session?</p>
+                                            a new Trusonafication?</p>
                                         <!-- Dismiss Button -->
 
                                         <div class="flex justify-end mt-8">
@@ -827,22 +838,26 @@
                             });
                         </script>
                     </div>
-                    <div class="flex justify-between mt-6">
 
-                        <div>
-                            <div class="">
-                                <label for="">Share this link with the caller and ask them to scan the BACK of their
-                                    US/CAN driver license</label>
+                    <div class="flex justify-between mt-6 link-card-reverse">
+                        <div class="flex gap-7 justify-start items-center flex-wrap">
+                            <div class="flex flex-col gap-1">
+                                <div class="">Share this link with the caller and ask them to scan the BACK of their
+                                    US/CAN driver license
+                                </div>
+                                <span class="no-copy underline text-sm" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</span>
                             </div>
-
-                            <code style="-webkit-user-select: none; -ms-user-select: none; user-select: none;"
-                                  class="underline pt-4 text-sm mr-4" id="agent-link">https://authcloud.staging.trusona.net/identity/verifications/cc69837a-bdb6-4293-9a94-334761ef7319</code>
-
                             <button type="button"
                                     id="copyLinkBtn"
-                                    class="text-xl text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-5 py-2 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                                    class="text-sm  text-white bg-truPurple-light hover:bg-truPurple focus:ring-4 focus:ring-blue-300 rounded-lg text-sm px-3 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex justify-center items-center gap-3"
                             >
-                                Copy Link
+                                <span>Copy Link</span>
+                                <span class="icon-check">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-check-lg" viewBox="0 0 16 16">
+                                  <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z"/>
+                                </svg>
+                                  </span>
                             </button>
                         </div>
 
@@ -854,39 +869,133 @@
 
                         <div id="foo">
                             <div id="device-data" data-devices="data-verification-map-target=&quot;devices&quot;">
+                                <div class="first-data-row"><div class="mt-6 link-card" style="
+    flex: 1;
+">
+                                    <div class="flex gap-7 flex-wrap">
+                                        <h2 class="font-sofia font-normal text-lg inline-block" style="align-self: flex-start">Scan Only Info</h2>
 
-                                <table class="pb-10 mt-6">
-                                    <tbody>
-                                    <tr>
-                                        <td colspan="2"><label class="pr-5 text-2xl mt-6">Scan Only Info</label></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="pr-5">Status</label></td>
-                                        <td>Scanned Successfully</td>
-                                    </tr>
+                                        <section id="meter-scan" class="meter-container">
+                                            <div>Scan</div>
+                                            <div class="meter-inner">
+                                                <svg class="risk-meter" viewBox="0 0 640 100" xmlns="http://www.w3.org/2000/svg">
+                                                    <!-- Background for the gauge -->
+                                                    <rect x="20" y="40" width="600" height="20" fill="#e0e0e0"></rect>
+                                                    <!-- Sections for the gauge -->
+                                                    <rect x="20" y="40" width="200" height="20" fill="#6DAD81"></rect> <!-- Green for low risk -->
+                                                    <rect x="220" y="40" width="200" height="20" fill="#E3C342"></rect> <!-- Yellow for medium risk -->
+                                                    <rect x="420" y="40" width="200" height="20" fill="#D1535C"></rect> <!-- Red for high risk -->
+                                                    <!-- Needle and Decorative Base as a single unit -->
+                                                    <g class="needle-unit" transform="translate(40,50)">
+                                                        <!-- Vertical Needle (adjust the y1, y2 values if needed) -->
+                                                        <line style="visibility: hidden" x1="0" y1="22" x2="0" y2="-35" stroke="#7B46D1" stroke-width="4" stroke-linecap="round"></line>
+                                                        <!-- Decorative Base -->
+                                                        <g transform="translate(-400,-345) scale(4)">
+                                                            <circle cx="100.5" cy="85" r="5" fill="white"></circle>
+                                                            <!-- Your decorative base paths here, adjusted as needed -->
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 96.563 83.844 L 104.249 83.844 L 104.249 83.299 L 95.986 83.299 C 95.986 83.567 96.206 83.844 96.563 83.844 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 100.41 89.547 L 100.98 89.547 L 100.98 84.386 L 100.41 84.386 L 100.41 89.547 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 99.269 89.005 C 99.269 89.344 99.568 89.548 99.839 89.548 L 99.839 84.386 L 99.269 84.386 L 99.269 89.005 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 104.826 84.387 L 101.551 84.387 L 101.551 90.09 L 99.84 90.09 C 99.231 90.09 98.698 89.63 98.698 89.005 L 98.698 84.387 L 96.563 84.387 C 95.914 84.387 95.422 83.886 95.422 83.302 L 95.422 81.675 L 103.685 81.675 C 104.313 81.675 104.826 82.163 104.826 82.759 L 104.826 84.387 Z M 100.124 78.619 C 96.213 78.619 93.042 81.633 93.042 85.351 C 93.042 89.069 96.213 92.083 100.124 92.083 C 104.035 92.083 107.206 89.069 107.206 85.351 C 107.206 81.633 104.035 78.619 100.124 78.619 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 103.685 82.217 L 95.992 82.217 L 95.992 82.759 L 104.255 82.759 C 104.255 82.469 104.01 82.217 103.685 82.217 Z" fill="#7B46D1"></path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <span><span style="color: #6DAD81">No Risk</span></span>
+                                        </section>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                setTimeout(()=>{
+                                                    setMeterByLevel(document.getElementById('meter-scan'), 'no_risk');
+                                                }, 2000);
+                                            });
+                                        </script>
+                                    </div>
+                                    <table class="pb-10 mt-2">
+                                        <tbody>
+                                        <tr>
+                                            <td><label class="pr-5 font-bold">Status:</label></td>
+                                            <td>Scanned Successfully</td>
+                                        </tr>
 
-                                    <tr>
-                                        <td><label class="pr-5">Name</label></td>
-                                        <td>MILLER, BRENT E</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="pr-5">Date of Birth</label></td>
-                                        <td>04/16/1973</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="pr-5">Address</label></td>
-                                        <td>2882 COASTAL DR AURORA, IL, 60503</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="pr-5">Nationality</label></td>
-                                        <td>USA</td>
-                                    </tr>
-                                    <tr>
-                                        <td><label class="pr-5">Document issuer country</label></td>
-                                        <td></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                        <tr>
+                                            <td><label class="pr-5 font-bold">Name:</label></td>
+                                            <td>MILLER, BRENT E</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="pr-5 font-bold">Date of Birth:</label></td>
+                                            <td>04/16/1973</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="pr-5 font-bold">Address:</label></td>
+                                            <td>2882 COASTAL DR AURORA, IL, 60503</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="pr-5 font-bold">Nationality:</label></td>
+                                            <td>USA</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="pr-5 font-bold">Document issuer country:</label></td>
+                                            <td></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                    <div class="mt-6 link-card-reverse" style="
+    flex: 1;
+">
+                                        <h2 class="font-sofia font-normal text-lg mb-4">Overall Score</h2>
+                                        <section id="meter-overall" class="meter-round-container">
+                                            <div class="meter-round-inner">
+                                                <svg class="risk-meter" viewBox="44.747 44.604 110.631 55.254" xmlns="http://www.w3.org/2000/svg">
+                                                    <defs>
+                                                        <filter id="gauge-center-shadow" height="130%">
+                                                            <feGaussianBlur in="SourceAlpha" stdDeviation="1"></feGaussianBlur>
+                                                            <feOffset dx="0" dy="-4" result="offsetblur"></feOffset>
+                                                            <feFlood flood-color="rgba(0,0,0,0.28)" result="color"></feFlood>
+                                                            <feComposite in="color" in2="offsetblur" operator="in" result="shadow"></feComposite>
+                                                            <feBlend in="SourceGraphic" in2="shadow" mode="normal"></feBlend>
+                                                        </filter>
+                                                    </defs>
+                                                    <circle cx="100" cy="100" r="45" fill="none" stroke="#E3C342" stroke-width="20" stroke-dasharray="141.3"
+                                                            stroke-dashoffset="141.3"></circle>
+                                                    <circle cx="100" cy="100" r="45" fill="none" stroke="#D1535C" stroke-width="20" stroke-dasharray="141.3"
+                                                            stroke-dashoffset="47.1"></circle>
+                                                    <circle cx="100" cy="100" r="45" fill="none" stroke="#6DAD81" stroke-width="20" stroke-dasharray="141.3"
+                                                            stroke-dashoffset="-47.1"></circle>
+                                                    <circle cx="100" cy="100" r="35" fill="#F2F2F2" filter="url(#gauge-center-shadow)"></circle>
+                                                    <line class="needle" x1="100" y1="100" x2="100" y2="50" stroke="#F2F2F2" stroke-width="2"
+                                                          stroke-linecap="round"></line>
+                                                    <g transform="matrix(1, 0, 0, 1, -0.042571, -2.603626)">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                              d="M 96.563 83.844 L 104.249 83.844 L 104.249 83.299 L 95.986 83.299 C 95.986 83.567 96.206 83.844 96.563 83.844 Z"
+                                                              fill="#7B46D1" style=""></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                              d="M 100.41 89.547 L 100.98 89.547 L 100.98 84.386 L 100.41 84.386 L 100.41 89.547 Z"
+                                                              fill="#7B46D1" style=""></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                              d="M 99.269 89.005 C 99.269 89.344 99.568 89.548 99.839 89.548 L 99.839 84.386 L 99.269 84.386 L 99.269 89.005 Z"
+                                                              fill="#7B46D1" style=""></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                              d="M 104.826 84.387 L 101.551 84.387 L 101.551 90.09 L 99.84 90.09 C 99.231 90.09 98.698 89.63 98.698 89.005 L 98.698 84.387 L 96.563 84.387 C 95.914 84.387 95.422 83.886 95.422 83.302 L 95.422 81.675 L 103.685 81.675 C 104.313 81.675 104.826 82.163 104.826 82.759 L 104.826 84.387 Z M 100.124 78.619 C 96.213 78.619 93.042 81.633 93.042 85.351 C 93.042 89.069 96.213 92.083 100.124 92.083 C 104.035 92.083 107.206 89.069 107.206 85.351 C 107.206 81.633 104.035 78.619 100.124 78.619 Z"
+                                                              fill="#7B46D1" style=""></path>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                              d="M 103.685 82.217 L 95.992 82.217 L 95.992 82.759 L 104.255 82.759 C 104.255 82.469 104.01 82.217 103.685 82.217 Z"
+                                                              fill="#7B46D1" style=""></path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <h1>&nbsp;&nbsp;</h1>
+                                        </section>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                setTimeout(()=>{
+                                                    setRoundMeterByLevel(document.getElementById('meter-overall'), 'no_risk');
+                                                }, 3000)
+                                            });
+                                        </script>
+                                    </div></div>
                                 <style>
                                     /* Tooltip container */
                                     .tooltip {
@@ -906,7 +1015,7 @@
                                         font-size: 14px;
                                         box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
                                         position: absolute;
-                                        z-index: 1;
+                                        z-index: 9999999;
                                         word-wrap: break-word;
                                     }
 
@@ -930,482 +1039,59 @@
                                     }
                                 </style>
 
+                                <div class="mt-6 link-card">
+                                    <div class="flex gap-7 flex-wrap">
+                                    <h2 class="font-sofia font-normal text-lg inline-block" style="align-self: flex-start">Trusonafications</h2>
 
-                                <table class="mt-8 table-fixed  border-b border-gray-200 table-row-hover" id="verification--table">
-                                    <thead>
-                                    <tr class="text-left text-white font-light bg-secure">
-                                        <th scope="col"
-                                            class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                            <div class="flex items-center justify-between w-full">
-                                                <div class="">
-                                                    Field Name
-                                                </div>
-
+                                        <section id="meter-verifiers" class="meter-container">
+                                            <div>Verifiers</div>
+                                            <div class="meter-inner">
+                                                <svg class="risk-meter" viewBox="0 0 640 100" xmlns="http://www.w3.org/2000/svg">
+                                                    <!-- Background for the gauge -->
+                                                    <rect x="20" y="40" width="600" height="20" fill="#e0e0e0"></rect>
+                                                    <!-- Sections for the gauge -->
+                                                    <rect x="20" y="40" width="200" height="20" fill="#6DAD81"></rect> <!-- Green for low risk -->
+                                                    <rect x="220" y="40" width="200" height="20" fill="#E3C342"></rect> <!-- Yellow for medium risk -->
+                                                    <rect x="420" y="40" width="200" height="20" fill="#D1535C"></rect> <!-- Red for high risk -->
+                                                    <!-- Needle and Decorative Base as a single unit -->
+                                                    <g class="needle-unit" transform="translate(40,50)">
+                                                        <!-- Vertical Needle (adjust the y1, y2 values if needed) -->
+                                                        <line style="visibility: hidden" x1="0" y1="22" x2="0" y2="-35" stroke="#7B46D1" stroke-width="4" stroke-linecap="round"></line>
+                                                        <!-- Decorative Base -->
+                                                        <g transform="translate(-400,-345) scale(4)">
+                                                            <circle cx="100.5" cy="85" r="5" fill="white"></circle>
+                                                            <!-- Your decorative base paths here, adjusted as needed -->
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 96.563 83.844 L 104.249 83.844 L 104.249 83.299 L 95.986 83.299 C 95.986 83.567 96.206 83.844 96.563 83.844 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 100.41 89.547 L 100.98 89.547 L 100.98 84.386 L 100.41 84.386 L 100.41 89.547 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 99.269 89.005 C 99.269 89.344 99.568 89.548 99.839 89.548 L 99.839 84.386 L 99.269 84.386 L 99.269 89.005 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 104.826 84.387 L 101.551 84.387 L 101.551 90.09 L 99.84 90.09 C 99.231 90.09 98.698 89.63 98.698 89.005 L 98.698 84.387 L 96.563 84.387 C 95.914 84.387 95.422 83.886 95.422 83.302 L 95.422 81.675 L 103.685 81.675 C 104.313 81.675 104.826 82.163 104.826 82.759 L 104.826 84.387 Z M 100.124 78.619 C 96.213 78.619 93.042 81.633 93.042 85.351 C 93.042 89.069 96.213 92.083 100.124 92.083 C 104.035 92.083 107.206 89.069 107.206 85.351 C 107.206 81.633 104.035 78.619 100.124 78.619 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 103.685 82.217 L 95.992 82.217 L 95.992 82.759 L 104.255 82.759 C 104.255 82.469 104.01 82.217 103.685 82.217 Z" fill="#7B46D1"></path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
                                             </div>
-                                        </th>
-                                        <th scope="col"
-                                            class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                            <div class="flex items-center justify-between w-full">
-                                                <div class="">
-                                                    Data
-                                                </div>
-
-                                            </div>
-                                        </th>
-                                        <th scope="col"
-                                            class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                            <div class="flex items-center justify-between w-full">
-                                                <div class="">
-                                                    <form class="button_to" method="post"
-                                                          action="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc">
-                                                        <input type="hidden" name="_method" value="put"
-                                                               autocomplete="off">
-                                                        <button class="rounded-md bg-truPurple px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer disabled:bg-gray-200 disabled:text-black disabled:cursor-not-allowed tooltip"
-                                                                disabled="disabled" type="submit"><span
-                                                                class="tooltiptext">Checks the scanned document against DMV database</span>DMV
-                                                            <svg class="ml-2 inline-block -mr-0.5 h-5 w-5"
-                                                                 viewBox="0 0 20 20" fill="currentColor"
-                                                                 aria-hidden="true">
-                                                                <path fill-rule="evenodd"
-                                                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                                                      clip-rule="evenodd"></path>
-                                                            </svg>
-                                                        </button>
-                                                        <input type="hidden" name="identity_verification[verifiers][]"
-                                                               value="DMV" autocomplete="off"></form>
-                                                </div>
-
-                                            </div>
-                                        </th>
-                                        <th scope="col"
-                                            class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                            <div class="flex items-center justify-between w-full">
-                                                <div class="">
-                                                    <form class="button_to" method="post"
-                                                          action="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc">
-                                                        <input type="hidden" name="_method" value="put"
-                                                               autocomplete="off">
-                                                        <button class="rounded-md bg-truPurple px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 cursor-pointer disabled:bg-gray-200 disabled:text-black disabled:cursor-not-allowed tooltip"
-                                                                type="submit"><span class="tooltiptext">Checks the scanned document against MNO database</span>MNO
-                                                        </button>
-                                                        <input type="hidden" name="identity_verification[verifiers][]"
-                                                               value="MNO_V" autocomplete="off"></form>
-                                                </div>
-
-                                            </div>
-                                        </th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody class="divide-y divide-gray-200 bg-white" id="-table-body">
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">First
-                                            Name
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            BRENT
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Last
-                                            Name
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            MILLER
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Date Of
-                                            Birth
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            04/16/1973
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">
-                                            Address
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            2882 COASTAL DR
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">City
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            AURORA
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">State
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            IL
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Zip
-                                            Code
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            60503
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Document
-                                            Type
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            Driver License
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Document
-                                            Number
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            M46006573109
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Issue
-                                            Date
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            04/25/2023
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Expiry
-                                            Date
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            04/16/2027
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Height
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            71
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Weight
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            160
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Eye
-                                            Color
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            Brown
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Sex</td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                            Male
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                 stroke-width="2.5" stroke="currentColor"
-                                                 class="w-6 h-6 m-auto text-positive">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                      d="m4.5 12.75 6 6 9-13.5"></path>
-                                            </svg>
-
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    <tr>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Phone
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-
-                                        </td>
-
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-
-                                        <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <br>&nbsp;<br>
-
-                                <h1 class="text-2xl mt-6 inline-block">Devices</h1> - Sorted by order clicked, latest on
-                                top
-
-                                <div class="overflow-auto">
-                                    <table class="mt-8 table-fixed min-w-full border-b border-gray-200 table-row-hover"
-                                           id="organization--table">
+                                            <span>&nbsp;&nbsp;</span>
+                                        </section>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                setTimeout(()=>{
+                                                    setMeterByLevel(document.getElementById('meter-verifiers'), 'no_risk');
+                                                }, 2000);
+                                            });
+                                        </script>
+                                </div>
+                                    <div class="mt-2 overflow-x-auto">
+                                        <div style="margin-top: 2.45rem"></div>
+                                        <table class=" table-fixed  border-b border-gray-200 table-row-hover" id="verification--table">
                                         <thead>
+
                                         <tr class="text-left text-white font-light bg-secure">
                                             <th scope="col"
                                                 class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
 
                                                 <div class="flex items-center justify-between w-full">
                                                     <div class="">
-                                                        IP Address
+                                                        Field Name
                                                     </div>
 
                                                 </div>
@@ -1415,7 +1101,7 @@
 
                                                 <div class="flex items-center justify-between w-full">
                                                     <div class="">
-                                                        IP Country
+                                                        Data
                                                     </div>
 
                                                 </div>
@@ -1425,7 +1111,18 @@
 
                                                 <div class="flex items-center justify-between w-full">
                                                     <div class="">
-                                                        IP Region
+                                                            <button disabled class="verify-btn used tooltip" type="button">
+                                                                <span>DMV</span>
+                                                                <span class="tooltiptext">This service can only be used once.</span>
+                                                                <svg class="successIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0,0,256,256">
+                                                                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                                                        <g transform="scale(5.33333,5.33333)">
+                                                                            <path d="M44,24c0,11.045 -8.955,20 -20,20c-11.045,0 -20,-8.955 -20,-20c0,-11.045 8.955,-20 20,-20c11.045,0 20,8.955 20,20z" fill="#4caf50"></path>
+                                                                            <path d="M34.602,14.602l-13.602,13.597l-5.602,-5.598l-2.797,2.797l8.399,8.403l16.398,-16.402z" fill="#ffffff"></path>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                            </button>
                                                     </div>
 
                                                 </div>
@@ -1435,312 +1132,801 @@
 
                                                 <div class="flex items-center justify-between w-full">
                                                     <div class="">
-                                                        IP City
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Locale
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Time Zone
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Date/Time
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Platform
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Type
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        OS
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        ISP Name
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Screen Size
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        User Agent
-                                                    </div>
-
-                                                </div>
-                                            </th>
-                                            <th scope="col"
-                                                class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
-
-                                                <div class="flex items-center justify-between w-full">
-                                                    <div class="">
-                                                        Browser Date Time String
+                                                        <div class="flex items-center justify-between w-full">
+                                                            <div class="">
+                                                                <button class="verify-btn tooltip" type="button">
+                                                                    <span>MNO</span>
+                                                                    <span class="tooltiptext">Checks the scanned document against MNO database</span>
+                                                                </button>
+                                                            </div>
                                                     </div>
 
                                                 </div>
                                             </th>
                                         </tr>
                                         </thead>
+
                                         <tbody class="divide-y divide-gray-200 bg-white" id="-table-body">
                                         <tr>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">98.46.252.28
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">First
+                                                Name
                                             </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">United
-                                                States
-                                            </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Illinois</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Aurora</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">en-US</td>
+
                                             <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
-                                                America/Chicago (-6)
+                                                BRENT
                                             </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">3/10/2024
-                                                12:44
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
                                             </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iPhone</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mobile Safari
-                                                17.3
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
                                             </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iOS 17.3</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">COMCAST-7922
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Last
+                                                Name
                                             </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">844 X 390</td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mozilla/5.0
-                                                (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15
-                                                (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                MILLER
                                             </td>
-                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Sun Mar 10
-                                                2024 12:44:53 GMT-0500 (Central Daylight Time)
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Date Of
+                                                Birth
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                04/16/1973
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">
+                                                Address
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                2882 COASTAL DR
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">City
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                AURORA
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">State
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                IL
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Zip
+                                                Code
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                60503
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Document
+                                                Type
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                Driver License
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Document
+                                                Number
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                M46006573109
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Issue
+                                                Date
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                04/25/2023
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Expiry
+                                                Date
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                04/16/2027
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Height
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                71
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Weight
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                160
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Eye
+                                                Color
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                Brown
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Sex</td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                Male
+                                            </td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                     stroke-width="2.5" stroke="currentColor"
+                                                     class="w-6 h-6 m-auto text-positive">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                          d="m4.5 12.75 6 6 9-13.5"></path>
+                                                </svg>
+
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                            </td>
+                                        </tr>
+                                        <tr>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 font-bold">Phone
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200"></td>
+
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
+                                                --
+                                            </td>
+
+                                            <td class="lg:whitespace-nowrap p-4 border-x border-gray-200 text-center ">
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
+                                    </div>
                                 </div>
 
-                                <div data-controller="verification-map">
-                                    <div id="device-data"
-                                         data-devices="[{&quot;id&quot;:&quot;944497b1-9bdf-4116-9e46-5d24d625dd67&quot;,&quot;ip_address&quot;:&quot;98.46.252.28&quot;,&quot;city&quot;:&quot;Aurora&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;region&quot;:&quot;Illinois&quot;,&quot;isp&quot;:&quot;COMCAST-7922&quot;,&quot;platform&quot;:&quot;iPhone&quot;,&quot;language&quot;:&quot;en-US&quot;,&quot;display_height&quot;:844,&quot;browser_time_zone&quot;:&quot;America/Chicago&quot;,&quot;ip_address_time_zone&quot;:&quot;America/Chicago&quot;,&quot;display_width&quot;:390,&quot;browser_height&quot;:844,&quot;browser_width&quot;:390,&quot;browser&quot;:&quot;Mobile Safari 17.3&quot;,&quot;user_agent&quot;:&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1&quot;,&quot;latitude&quot;:41.7688,&quot;longitude&quot;:-88.3405,&quot;operating_system&quot;:&quot;iOS 17.3&quot;,&quot;date_time&quot;:&quot;3/10/2024 12:44&quot;,&quot;browser_date_time&quot;:&quot;Sun Mar 10 2024 12:44:53 GMT-0500 (Central Daylight Time)&quot;,&quot;browser_time_zone_with_offset&quot;:&quot;America/Chicago (-6)&quot;}]"
-                                         data-verification-map-target="devices">
+                                <div class="mt-6 link-card">
+                                    <div class="flex gap-7 flex-wrap">
+                                        <h2 class="font-sofia font-normal text-lg inline-block" style="align-self: flex-start">Devices <span class="text-sm">- Sorted by order clicked, latest on
+                                            top</span> </h2>
 
-                                        <div id="summaries-data"
-                                             data-summaries="[{&quot;matches&quot;:null,&quot;document_number&quot;:&quot;M46006573109&quot;,&quot;issue_date&quot;:&quot;04/25/2023&quot;,&quot;expiry_date&quot;:&quot;04/16/2027&quot;,&quot;document_type&quot;:&quot;Driver License&quot;,&quot;verifier&quot;:&quot;NONE&quot;,&quot;verifier_result&quot;:null,&quot;nationality&quot;:&quot;USA&quot;,&quot;date_of_birth&quot;:&quot;04/16/1973&quot;,&quot;first_name&quot;:&quot;BRENT&quot;,&quot;last_name&quot;:&quot;MILLER&quot;,&quot;middle_initial&quot;:&quot;E&quot;,&quot;full_name&quot;:null,&quot;eye_color&quot;:&quot;Brown&quot;,&quot;height&quot;:&quot;71&quot;,&quot;weight&quot;:&quot;160&quot;,&quot;sex&quot;:&quot;Male&quot;,&quot;middle_name&quot;:&quot;E&quot;,&quot;phone_number&quot;:null,&quot;latitude&quot;:41.72434,&quot;longitude&quot;:-88.24316,&quot;address1&quot;:&quot;2882 COASTAL DR&quot;,&quot;address2&quot;:null,&quot;city&quot;:&quot;AURORA&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;zip_code&quot;:&quot;60503&quot;,&quot;zip4&quot;:null},{&quot;matches&quot;:{&quot;last_name&quot;:true,&quot;first_name&quot;:true,&quot;middle_name&quot;:true,&quot;date_of_birth&quot;:true,&quot;document_number&quot;:true,&quot;issue_date&quot;:true,&quot;expiry_date&quot;:true,&quot;eye_color&quot;:true,&quot;sex&quot;:true,&quot;address1&quot;:true,&quot;city&quot;:true,&quot;state&quot;:true,&quot;zip_code&quot;:true,&quot;height&quot;:true,&quot;zip4&quot;:null,&quot;weight&quot;:true,&quot;document_type&quot;:true},&quot;document_number&quot;:&quot;M46006573109&quot;,&quot;issue_date&quot;:&quot;04/25/2023&quot;,&quot;expiry_date&quot;:&quot;04/16/2027&quot;,&quot;document_type&quot;:&quot;Driver License&quot;,&quot;verifier&quot;:&quot;DMV&quot;,&quot;verifier_result&quot;:&quot;SUCCESS&quot;,&quot;nationality&quot;:null,&quot;date_of_birth&quot;:&quot;04/16/1973&quot;,&quot;first_name&quot;:&quot;BRENT&quot;,&quot;last_name&quot;:&quot;MILLER&quot;,&quot;middle_initial&quot;:&quot;E&quot;,&quot;full_name&quot;:null,&quot;eye_color&quot;:&quot;Brown&quot;,&quot;height&quot;:&quot;511&quot;,&quot;weight&quot;:&quot;160&quot;,&quot;sex&quot;:&quot;Male&quot;,&quot;middle_name&quot;:&quot;E&quot;,&quot;phone_number&quot;:null,&quot;latitude&quot;:null,&quot;longitude&quot;:null,&quot;address1&quot;:&quot;2882 COASTAL DR&quot;,&quot;address2&quot;:null,&quot;city&quot;:&quot;AURORA&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;zip_code&quot;:&quot;60503&quot;,&quot;zip4&quot;:null}]"
-                                             data-verification-map-target="summaries">
+                                        <section id="meter-devices" class="meter-container">
+                                            <div>Devices</div>
+                                            <div class="meter-inner">
+                                                <svg class="risk-meter" viewBox="0 0 640 100" xmlns="http://www.w3.org/2000/svg">
+                                                    <!-- Background for the gauge -->
+                                                    <rect x="20" y="40" width="600" height="20" fill="#e0e0e0"></rect>
+                                                    <!-- Sections for the gauge -->
+                                                    <rect x="20" y="40" width="200" height="20" fill="#6DAD81"></rect> <!-- Green for low risk -->
+                                                    <rect x="220" y="40" width="200" height="20" fill="#E3C342"></rect> <!-- Yellow for medium risk -->
+                                                    <rect x="420" y="40" width="200" height="20" fill="#D1535C"></rect> <!-- Red for high risk -->
+                                                    <!-- Needle and Decorative Base as a single unit -->
+                                                    <g class="needle-unit" transform="translate(40,50)">
+                                                        <!-- Vertical Needle (adjust the y1, y2 values if needed) -->
+                                                        <line style="visibility: hidden" x1="0" y1="22" x2="0" y2="-35" stroke="#7B46D1" stroke-width="4" stroke-linecap="round"></line>
+                                                        <!-- Decorative Base -->
+                                                        <g transform="translate(-400,-345) scale(4)">
+                                                            <circle cx="100.5" cy="85" r="5" fill="white"></circle>
+                                                            <!-- Your decorative base paths here, adjusted as needed -->
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 96.563 83.844 L 104.249 83.844 L 104.249 83.299 L 95.986 83.299 C 95.986 83.567 96.206 83.844 96.563 83.844 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 100.41 89.547 L 100.98 89.547 L 100.98 84.386 L 100.41 84.386 L 100.41 89.547 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 99.269 89.005 C 99.269 89.344 99.568 89.548 99.839 89.548 L 99.839 84.386 L 99.269 84.386 L 99.269 89.005 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 104.826 84.387 L 101.551 84.387 L 101.551 90.09 L 99.84 90.09 C 99.231 90.09 98.698 89.63 98.698 89.005 L 98.698 84.387 L 96.563 84.387 C 95.914 84.387 95.422 83.886 95.422 83.302 L 95.422 81.675 L 103.685 81.675 C 104.313 81.675 104.826 82.163 104.826 82.759 L 104.826 84.387 Z M 100.124 78.619 C 96.213 78.619 93.042 81.633 93.042 85.351 C 93.042 89.069 96.213 92.083 100.124 92.083 C 104.035 92.083 107.206 89.069 107.206 85.351 C 107.206 81.633 104.035 78.619 100.124 78.619 Z" fill="#7B46D1"></path>
+                                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M 103.685 82.217 L 95.992 82.217 L 95.992 82.759 L 104.255 82.759 C 104.255 82.469 104.01 82.217 103.685 82.217 Z" fill="#7B46D1"></path>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <span><span style="color: #6DAD81">No Risk</span></span>
+                                        </section>
+                                        <script>
+                                            document.addEventListener('DOMContentLoaded', function() {
+                                                setTimeout(()=>{
+                                                    setMeterByLevel(document.getElementById('meter-devices'), 'no_risk');
+                                                }, 2000);
+                                            });
+                                        </script>
+                                    </div>
 
-                                            <div class="pt-3" style="width: 100%;"></div>
-                                            <div class="pt-3 pb-4 leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
-                                                 id="mapid" style="width: 100%; height: 500px; position: relative;"
-                                                 tabindex="0">
-                                                <div class="leaflet-pane leaflet-map-pane"
-                                                     style="transform: translate3d(-284px, -173px, 0px);">
-                                                    <div class="leaflet-pane leaflet-tile-pane">
-                                                        <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
-                                                            <div class="leaflet-tile-container leaflet-zoom-animated"
-                                                                 style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
-                                                                <img alt="" src="./Management Portal_files/3048.png"
-                                                                     class="leaflet-tile leaflet-tile-loaded"
-                                                                     style="width: 256px; height: 256px; transform: translate3d(710px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(1).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047.png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(710px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(1).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049.png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(710px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(1).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(966px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(2).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(3).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(2).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(3).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(2).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(454px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(3).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1222px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(4).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(5).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(4).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(5).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(4).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(198px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(5).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1478px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(6).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(7).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(6).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(7).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(6).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(-58px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(7).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1734px, 486px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3048(8).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1990px, 230px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3047(8).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1990px, -26px, 0px); opacity: 1;"><img
-                                                                    alt="" src="./Management Portal_files/3049(8).png"
-                                                                    class="leaflet-tile leaflet-tile-loaded"
-                                                                    style="width: 256px; height: 256px; transform: translate3d(1990px, 486px, 0px); opacity: 1;">
+                                    <div class="overflow-auto">
+                                        <table class="no-wrap table-fixed min-w-full border-b border-gray-200 table-row-hover mt-2"
+                                               id="organization--table">
+                                            <thead>
+                                            <tr class="text-left text-white font-light bg-secure">
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP Address
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP Country
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP Region
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            IP City
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Locale
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Time Zone
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Date/Time
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Platform
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Type
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            OS
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            ISP Name
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Screen Size
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            User Agent
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                                <th scope="col"
+                                                    class="p-3 lg:whitespace-nowrap first:rounded-tl last:rounded-tr">
+
+                                                    <div class="flex items-center justify-between w-full">
+                                                        <div class="">
+                                                            Browser Date Time String
+                                                        </div>
+
+                                                    </div>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                            <tbody class="divide-y divide-gray-200 bg-white" id="-table-body">
+                                            <tr>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">98.46.252.28
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">United
+                                                    States
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Illinois</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Aurora</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">en-US</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">
+                                                    America/Chicago (-6)
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">3/10/2024
+                                                    12:44
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iPhone</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mobile Safari
+                                                    17.3
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">iOS 17.3</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">COMCAST-7922
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">844 X 390</td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Mozilla/5.0
+                                                    (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15
+                                                    (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1
+                                                </td>
+                                                <td class="lg:whitespace-nowrap p-4 border-x border-gray-200">Sun Mar 10
+                                                    2024 12:44:53 GMT-0500 (Central Daylight Time)
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div data-controller="verification-map">
+                                        <div id="device-data"
+                                             data-devices="[{&quot;id&quot;:&quot;944497b1-9bdf-4116-9e46-5d24d625dd67&quot;,&quot;ip_address&quot;:&quot;98.46.252.28&quot;,&quot;city&quot;:&quot;Aurora&quot;,&quot;country&quot;:&quot;United States&quot;,&quot;region&quot;:&quot;Illinois&quot;,&quot;isp&quot;:&quot;COMCAST-7922&quot;,&quot;platform&quot;:&quot;iPhone&quot;,&quot;language&quot;:&quot;en-US&quot;,&quot;display_height&quot;:844,&quot;browser_time_zone&quot;:&quot;America/Chicago&quot;,&quot;ip_address_time_zone&quot;:&quot;America/Chicago&quot;,&quot;display_width&quot;:390,&quot;browser_height&quot;:844,&quot;browser_width&quot;:390,&quot;browser&quot;:&quot;Mobile Safari 17.3&quot;,&quot;user_agent&quot;:&quot;Mozilla/5.0 (iPhone; CPU iPhone OS 17_3_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Mobile/15E148 Safari/604.1&quot;,&quot;latitude&quot;:41.7688,&quot;longitude&quot;:-88.3405,&quot;operating_system&quot;:&quot;iOS 17.3&quot;,&quot;date_time&quot;:&quot;3/10/2024 12:44&quot;,&quot;browser_date_time&quot;:&quot;Sun Mar 10 2024 12:44:53 GMT-0500 (Central Daylight Time)&quot;,&quot;browser_time_zone_with_offset&quot;:&quot;America/Chicago (-6)&quot;}]"
+                                             data-verification-map-target="devices">
+
+                                            <div id="summaries-data"
+                                                 data-summaries="[{&quot;matches&quot;:null,&quot;document_number&quot;:&quot;M46006573109&quot;,&quot;issue_date&quot;:&quot;04/25/2023&quot;,&quot;expiry_date&quot;:&quot;04/16/2027&quot;,&quot;document_type&quot;:&quot;Driver License&quot;,&quot;verifier&quot;:&quot;NONE&quot;,&quot;verifier_result&quot;:null,&quot;nationality&quot;:&quot;USA&quot;,&quot;date_of_birth&quot;:&quot;04/16/1973&quot;,&quot;first_name&quot;:&quot;BRENT&quot;,&quot;last_name&quot;:&quot;MILLER&quot;,&quot;middle_initial&quot;:&quot;E&quot;,&quot;full_name&quot;:null,&quot;eye_color&quot;:&quot;Brown&quot;,&quot;height&quot;:&quot;71&quot;,&quot;weight&quot;:&quot;160&quot;,&quot;sex&quot;:&quot;Male&quot;,&quot;middle_name&quot;:&quot;E&quot;,&quot;phone_number&quot;:null,&quot;latitude&quot;:41.72434,&quot;longitude&quot;:-88.24316,&quot;address1&quot;:&quot;2882 COASTAL DR&quot;,&quot;address2&quot;:null,&quot;city&quot;:&quot;AURORA&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;zip_code&quot;:&quot;60503&quot;,&quot;zip4&quot;:null},{&quot;matches&quot;:{&quot;last_name&quot;:true,&quot;first_name&quot;:true,&quot;middle_name&quot;:true,&quot;date_of_birth&quot;:true,&quot;document_number&quot;:true,&quot;issue_date&quot;:true,&quot;expiry_date&quot;:true,&quot;eye_color&quot;:true,&quot;sex&quot;:true,&quot;address1&quot;:true,&quot;city&quot;:true,&quot;state&quot;:true,&quot;zip_code&quot;:true,&quot;height&quot;:true,&quot;zip4&quot;:null,&quot;weight&quot;:true,&quot;document_type&quot;:true},&quot;document_number&quot;:&quot;M46006573109&quot;,&quot;issue_date&quot;:&quot;04/25/2023&quot;,&quot;expiry_date&quot;:&quot;04/16/2027&quot;,&quot;document_type&quot;:&quot;Driver License&quot;,&quot;verifier&quot;:&quot;DMV&quot;,&quot;verifier_result&quot;:&quot;SUCCESS&quot;,&quot;nationality&quot;:null,&quot;date_of_birth&quot;:&quot;04/16/1973&quot;,&quot;first_name&quot;:&quot;BRENT&quot;,&quot;last_name&quot;:&quot;MILLER&quot;,&quot;middle_initial&quot;:&quot;E&quot;,&quot;full_name&quot;:null,&quot;eye_color&quot;:&quot;Brown&quot;,&quot;height&quot;:&quot;511&quot;,&quot;weight&quot;:&quot;160&quot;,&quot;sex&quot;:&quot;Male&quot;,&quot;middle_name&quot;:&quot;E&quot;,&quot;phone_number&quot;:null,&quot;latitude&quot;:null,&quot;longitude&quot;:null,&quot;address1&quot;:&quot;2882 COASTAL DR&quot;,&quot;address2&quot;:null,&quot;city&quot;:&quot;AURORA&quot;,&quot;state&quot;:&quot;IL&quot;,&quot;zip_code&quot;:&quot;60503&quot;,&quot;zip4&quot;:null}]"
+                                                 data-verification-map-target="summaries">
+
+                                                <div class="pt-3" style="width: 100%;"></div>
+                                                <div class="pt-3 pb-4 leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+                                                     id="mapid" style="width: 100%; height: 500px; position: relative;"
+                                                     tabindex="0">
+                                                    <div class="leaflet-pane leaflet-map-pane"
+                                                         style="transform: translate3d(-284px, -173px, 0px);">
+                                                        <div class="leaflet-pane leaflet-tile-pane">
+                                                            <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                                                                <div class="leaflet-tile-container leaflet-zoom-animated"
+                                                                     style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);">
+                                                                    <img alt="" src="./Management Portal_files/3048.png"
+                                                                         class="leaflet-tile leaflet-tile-loaded"
+                                                                         style="width: 256px; height: 256px; transform: translate3d(710px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(1).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(966px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047.png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(710px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(1).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(966px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049.png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(710px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(1).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(966px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(2).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(454px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(3).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1222px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(2).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(454px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(3).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1222px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(2).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(454px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(3).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1222px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(4).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(198px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(5).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1478px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(4).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(198px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(5).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1478px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(4).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(198px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(5).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1478px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(6).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(-58px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(7).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1734px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(6).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(-58px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(7).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1734px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(6).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(-58px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(7).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1734px, 486px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3048(8).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1990px, 230px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3047(8).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1990px, -26px, 0px); opacity: 1;"><img
+                                                                        alt="" src="./Management Portal_files/3049(8).png"
+                                                                        class="leaflet-tile leaflet-tile-loaded"
+                                                                        style="width: 256px; height: 256px; transform: translate3d(1990px, 486px, 0px); opacity: 1;">
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="leaflet-pane leaflet-overlay-pane"></div>
-                                                    <div class="leaflet-pane leaflet-shadow-pane"></div>
-                                                    <div class="leaflet-pane leaflet-marker-pane"><img
-                                                            src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0zNi42MTQgMTUuNjY5N0MzNi43MjcxIDE1LjU0NDYgMzYuODE1MSAxNS4zOTMgMzYuODcxOSAxNS4yMjU0QzM2LjkyODYgMTUuMDU3OCAzNi45NTI4IDE0Ljg3ODIgMzYuOTQyNyAxNC42OTg5QzM2LjkzMjcgMTQuNTE5NyAzNi44ODg3IDE0LjM0NSAzNi44MTM2IDE0LjE4N0MzNi43Mzg2IDE0LjAyOSAzNi42MzQ0IDEzLjg5MTQgMzYuNTA4MiAxMy43ODM3QzMxLjcxMTYgOS44MTEwNSAyNS45MzA5IDcuNjc2MzUgMjAgNy42ODc1MUMxMy44MzI3IDcuNjg3NTEgOC4xMjY3NCA5Ljk0NzY0IDMuNDkxNzQgMTMuNzgzN0MzLjM2NTM5IDEzLjg5MTIgMy4yNjEwMiAxNC4wMjg3IDMuMTg1OCAxNC4xODY2QzMuMTEwNTkgMTQuMzQ0NSAzLjA2NjMyIDE0LjUxOTEgMy4wNTYwNSAxNC42OTg0QzMuMDQ1NzkgMTQuODc3NiAzLjA2OTc3IDE1LjA1NzMgMy4xMjYzNCAxNS4yMjVDMy4xODI5MSAxNS4zOTI3IDMuMjcwNzMgMTUuNTQ0NCAzLjM4Mzc0IDE1LjY2OTdDMy41ODA4NCAxNS44ODk0IDMuODM5NzIgMTYuMDIyNyA0LjExNDcyIDE2LjA0NjFDNC4zODk3MSAxNi4wNjk2IDQuNjYzMTMgMTUuOTgxNiA0Ljg4Njc0IDE1Ljc5NzhDOS4yODU5NSAxMi4xODI0IDE0LjU3NSAxMC4yNDA5IDIwIDEwLjI1QzI1LjY0MDcgMTAuMjUgMzAuODYwNyAxMi4zMDUxIDM1LjExMSAxNS43OTUzQzM1LjU3MjIgMTYuMTc0NSAzNi4yMTM1IDE2LjEyODQgMzYuNjE0IDE1LjY2OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzEuNzY1MyAyMS4xOTQ0QzMxLjg4MTIgMjEuMDY3IDMxLjk3MDggMjAuOTExOCAzMi4wMjc0IDIwLjc0MDFDMzIuMDg0MSAyMC41NjgzIDMyLjEwNjUgMjAuMzg0MyAzMi4wOTI5IDIwLjIwMTVDMzIuMDc5MyAyMC4wMTg3IDMyLjAzMDEgMTkuODQxNiAzMS45NDg5IDE5LjY4MzFDMzEuODY3OCAxOS41MjQ3IDMxLjc1NjYgMTkuMzg4OCAzMS42MjM1IDE5LjI4NTRDMjguMTYzNiAxNi43MjY2IDI0LjEyNTQgMTUuMzY4MSAyMCAxNS4zNzVDMTUuNzEzOCAxNS4zNzUgMTEuNzIgMTYuODEgOC4zNzY1MSAxOS4yODU0QzguMjQyNzUgMTkuMzg4MiA4LjEzMDkyIDE5LjUyMzggOC4wNDkyNCAxOS42ODIzQzcuOTY3NTYgMTkuODQwOCA3LjkxODEgMjAuMDE4MSA3LjkwNDUxIDIwLjIwMTNDNy44OTA5MSAyMC4zODQ0IDcuOTEzNTIgMjAuNTY4NyA3Ljk3MDY3IDIwLjc0MDVDOC4wMjc4MiAyMC45MTI0IDguMTE4MDYgMjEuMDY3NSA4LjIzNDc2IDIxLjE5NDRDOC40MjY0NyAyMS40MDc1IDguNjc2MDggMjEuNTQwMSA4Ljk0MjY1IDIxLjU3MDNDOS4yMDkyMSAyMS42MDA2IDkuNDc2ODkgMjEuNTI2OCA5LjcwMTc2IDIxLjM2MUMxMi43NzUzIDE5LjExOSAxNi4zNTAxIDE3LjkzMDYgMjAgMTcuOTM3NUMyMy42NDkyIDE3LjkzMTEgMjcuMjIzMSAxOS4xMTk0IDMwLjI5NiAyMS4zNjFDMzAuNzU5NSAyMS42OTkyIDMxLjM3NiAyMS42Mzc3IDMxLjc2NTMgMjEuMTk0NFpNMjYuODUzNSAyNi43ODg0QzI3LjM2MiAyNi4yMDkyIDI3LjI2OTggMjUuMjM4MSAyNi42Mjg1IDI0Ljg2NjVDMjQuNTc0NiAyMy42NzkxIDIyLjMwMzQgMjMuMDYxIDIwIDIzLjA2MjVDMTcuNjE1IDIzLjA2MjUgMTUuMzYwNSAyMy43MTM0IDEzLjM3MTUgMjQuODY2NUMxMi43MzAzIDI1LjIzODEgMTIuNjM4IDI2LjIwOTIgMTMuMTQ2NSAyNi43ODg0TDEzLjE4MDMgMjYuODI2OEMxMy41NDAzIDI3LjIzNjggMTQuMDk2IDI3LjMxMzcgMTQuNTU1IDI3LjA1NzRDMTYuMjUwNCAyNi4xMTM0IDE4LjExMjkgMjUuNjIzNCAyMCAyNS42MjVDMjEuOTUzIDI1LjYyNSAyMy44MDI1IDI2LjE0MDEgMjUuNDQ1IDI3LjA2QzI1LjkwMTggMjcuMzE2MiAyNi40NTc1IDI3LjIzOTQgMjYuODE3NSAyNi44MjY4TDI2Ljg1MzUgMjYuNzg4NFpNMjIuMzg1IDMxLjg3NzVDMjIuODI2IDMxLjM3NTIgMjIuODMwNSAzMC41NDUgMjIuMjk1IDMwLjE4NjJDMjEuNjAwNCAyOS43MTY5IDIwLjgwNzcgMjkuNDY5IDIwIDI5LjQ2ODdDMTkuMTkyMyAyOS40NjkgMTguMzk5NiAyOS43MTY5IDE3LjcwNSAzMC4xODYyQzE3LjE2OTUgMzAuNTQ1IDE3LjE3NCAzMS4zNzUyIDE3LjYxNSAzMS44Nzc1TDE5LjIwMzUgMzMuNjg2NkMxOS40MTQ1IDMzLjkyNjggMTkuNzAwNiAzNC4wNjE4IDE5Ljk5ODkgMzQuMDYxOEMyMC4yOTcyIDM0LjA2MTggMjAuNTgzMyAzMy45MjY4IDIwLjc5NDMgMzMuNjg2NkwyMi4zODUgMzEuODc3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
-                                                            class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
-                                                            alt="Marker" tabindex="0" role="button"
-                                                            style="margin-left: 0px; margin-top: 0px; width: 32px; height: 32px; transform: translate3d(905px, 250px, 0px); z-index: 250;"><img
-                                                            src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0yMS41OTA3IDYuNzE4NzZDMjEuMTY4OCA2LjM3ODk2IDIwLjU5NjYgNi4xODgwOCAyMCA2LjE4ODA4QzE5LjQwMzQgNi4xODgwOCAxOC44MzEyIDYuMzc4OTYgMTguNDA5MiA2LjcxODc2TDMuNDUzNDkgMTguNzY0NkMzLjM0ODg5IDE4Ljg0ODkgMy4yNjU5MiAxOC45NDg5IDMuMjA5MzEgMTkuMDU5QzMuMTUyNyAxOS4xNjkxIDMuMTIzNTcgMTkuMjg3MSAzLjEyMzU3IDE5LjQwNjNDMy4xMjM1NyAxOS41MjU0IDMuMTUyNyAxOS42NDM0IDMuMjA5MzEgMTkuNzUzNUMzLjI2NTkyIDE5Ljg2MzYgMy4zNDg4OSAxOS45NjM2IDMuNDUzNDkgMjAuMDQ3OUMzLjY2NDczIDIwLjIxODEgMy45NTEyNCAyMC4zMTM2IDQuMjQ5OTkgMjAuMzEzNkM0LjM5NzkxIDIwLjMxMzYgNC41NDQzOSAyMC4yOTAyIDQuNjgxMDUgMjAuMjQ0NkM0LjgxNzcxIDIwLjE5OSA0Ljk0MTg5IDIwLjEzMjEgNS4wNDY0OSAyMC4wNDc5TDIwIDguMDAwMTlMMzQuOTUzNSAyMC4wNDc5QzM1LjE2NDcgMjAuMjE4MSAzNS40NTEyIDIwLjMxMzYgMzUuNzUgMjAuMzEzNkMzNi4wNDg3IDIwLjMxMzYgMzYuMzM1MiAyMC4yMTgxIDM2LjU0NjUgMjAuMDQ3OUMzNi43NTc3IDE5Ljg3NzcgMzYuODc2NCAxOS42NDY5IDM2Ljg3NjQgMTkuNDA2M0MzNi44NzY0IDE5LjE2NTYgMzYuNzU3NyAxOC45MzQ4IDM2LjU0NjUgMTguNzY0NkwzMS4yNSAxNC40OTk4VjguNTMxMjZDMzEuMjUgOC4yOTA5IDMxLjEzMTUgOC4wNjAzOSAzMC45MjA1IDcuODkwNDRDMzAuNzA5NSA3LjcyMDQ5IDMwLjQyMzQgNy42MjUwMSAzMC4xMjUgNy42MjUwMUgyNy44NzVDMjcuNTc2NiA3LjYyNTAxIDI3LjI5MDUgNy43MjA0OSAyNy4wNzk1IDcuODkwNDRDMjYuODY4NSA4LjA2MDM5IDI2Ljc1IDguMjkwOSAyNi43NSA4LjUzMTI2VjEwLjg3NDhMMjEuNTkwNyA2LjcxODc2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIwIDkuOTY4NTdMMzMuNSAyMC44NDM2VjI4LjQ2ODhDMzMuNSAyOS4xODk4IDMzLjE0NDQgMjkuODgxMyAzMi41MTE1IDMwLjM5MTJDMzEuODc4NiAzMC45MDExIDMxLjAyMDEgMzEuMTg3NSAzMC4xMjUgMzEuMTg3NUg5Ljg3NUM4Ljk3OTg5IDMxLjE4NzUgOC4xMjE0NSAzMC45MDExIDcuNDg4NTEgMzAuMzkxMkM2Ljg1NTU4IDI5Ljg4MTMgNi41IDI5LjE4OTggNi41IDI4LjQ2ODhWMjAuODQzNkwyMCA5Ljk2ODU3WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
-                                                            class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
-                                                            alt="Marker" tabindex="0" role="button"
-                                                            style="margin-left: -20px; margin-top: -20px; width: 32px; height: 32px; transform: translate3d(1472px, 597px, 0px); z-index: 597;">
-                                                    </div>
-                                                    <div class="leaflet-pane leaflet-tooltip-pane"></div>
-                                                    <div class="leaflet-pane leaflet-popup-pane"></div>
-                                                    <div class="leaflet-proxy leaflet-zoom-animated"
-                                                         style="transform: translate3d(534239px, 780481px, 0px) scale(4096);"></div>
-                                                </div>
-                                                <div class="leaflet-control-container">
-                                                    <div class="leaflet-top leaflet-left">
-                                                        <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a
-                                                                class="leaflet-control-zoom-in"
-                                                                href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
-                                                                title="Zoom in" role="button" aria-label="Zoom in"
-                                                                aria-disabled="false"><span aria-hidden="true">+</span></a><a
-                                                                class="leaflet-control-zoom-out"
-                                                                href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
-                                                                title="Zoom out" role="button" aria-label="Zoom out"
-                                                                aria-disabled="false"><span aria-hidden="true">−</span></a>
+                                                        <div class="leaflet-pane leaflet-overlay-pane"></div>
+                                                        <div class="leaflet-pane leaflet-shadow-pane"></div>
+                                                        <div class="leaflet-pane leaflet-marker-pane"><img
+                                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0zNi42MTQgMTUuNjY5N0MzNi43MjcxIDE1LjU0NDYgMzYuODE1MSAxNS4zOTMgMzYuODcxOSAxNS4yMjU0QzM2LjkyODYgMTUuMDU3OCAzNi45NTI4IDE0Ljg3ODIgMzYuOTQyNyAxNC42OTg5QzM2LjkzMjcgMTQuNTE5NyAzNi44ODg3IDE0LjM0NSAzNi44MTM2IDE0LjE4N0MzNi43Mzg2IDE0LjAyOSAzNi42MzQ0IDEzLjg5MTQgMzYuNTA4MiAxMy43ODM3QzMxLjcxMTYgOS44MTEwNSAyNS45MzA5IDcuNjc2MzUgMjAgNy42ODc1MUMxMy44MzI3IDcuNjg3NTEgOC4xMjY3NCA5Ljk0NzY0IDMuNDkxNzQgMTMuNzgzN0MzLjM2NTM5IDEzLjg5MTIgMy4yNjEwMiAxNC4wMjg3IDMuMTg1OCAxNC4xODY2QzMuMTEwNTkgMTQuMzQ0NSAzLjA2NjMyIDE0LjUxOTEgMy4wNTYwNSAxNC42OTg0QzMuMDQ1NzkgMTQuODc3NiAzLjA2OTc3IDE1LjA1NzMgMy4xMjYzNCAxNS4yMjVDMy4xODI5MSAxNS4zOTI3IDMuMjcwNzMgMTUuNTQ0NCAzLjM4Mzc0IDE1LjY2OTdDMy41ODA4NCAxNS44ODk0IDMuODM5NzIgMTYuMDIyNyA0LjExNDcyIDE2LjA0NjFDNC4zODk3MSAxNi4wNjk2IDQuNjYzMTMgMTUuOTgxNiA0Ljg4Njc0IDE1Ljc5NzhDOS4yODU5NSAxMi4xODI0IDE0LjU3NSAxMC4yNDA5IDIwIDEwLjI1QzI1LjY0MDcgMTAuMjUgMzAuODYwNyAxMi4zMDUxIDM1LjExMSAxNS43OTUzQzM1LjU3MjIgMTYuMTc0NSAzNi4yMTM1IDE2LjEyODQgMzYuNjE0IDE1LjY2OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNMzEuNzY1MyAyMS4xOTQ0QzMxLjg4MTIgMjEuMDY3IDMxLjk3MDggMjAuOTExOCAzMi4wMjc0IDIwLjc0MDFDMzIuMDg0MSAyMC41NjgzIDMyLjEwNjUgMjAuMzg0MyAzMi4wOTI5IDIwLjIwMTVDMzIuMDc5MyAyMC4wMTg3IDMyLjAzMDEgMTkuODQxNiAzMS45NDg5IDE5LjY4MzFDMzEuODY3OCAxOS41MjQ3IDMxLjc1NjYgMTkuMzg4OCAzMS42MjM1IDE5LjI4NTRDMjguMTYzNiAxNi43MjY2IDI0LjEyNTQgMTUuMzY4MSAyMCAxNS4zNzVDMTUuNzEzOCAxNS4zNzUgMTEuNzIgMTYuODEgOC4zNzY1MSAxOS4yODU0QzguMjQyNzUgMTkuMzg4MiA4LjEzMDkyIDE5LjUyMzggOC4wNDkyNCAxOS42ODIzQzcuOTY3NTYgMTkuODQwOCA3LjkxODEgMjAuMDE4MSA3LjkwNDUxIDIwLjIwMTNDNy44OTA5MSAyMC4zODQ0IDcuOTEzNTIgMjAuNTY4NyA3Ljk3MDY3IDIwLjc0MDVDOC4wMjc4MiAyMC45MTI0IDguMTE4MDYgMjEuMDY3NSA4LjIzNDc2IDIxLjE5NDRDOC40MjY0NyAyMS40MDc1IDguNjc2MDggMjEuNTQwMSA4Ljk0MjY1IDIxLjU3MDNDOS4yMDkyMSAyMS42MDA2IDkuNDc2ODkgMjEuNTI2OCA5LjcwMTc2IDIxLjM2MUMxMi43NzUzIDE5LjExOSAxNi4zNTAxIDE3LjkzMDYgMjAgMTcuOTM3NUMyMy42NDkyIDE3LjkzMTEgMjcuMjIzMSAxOS4xMTk0IDMwLjI5NiAyMS4zNjFDMzAuNzU5NSAyMS42OTkyIDMxLjM3NiAyMS42Mzc3IDMxLjc2NTMgMjEuMTk0NFpNMjYuODUzNSAyNi43ODg0QzI3LjM2MiAyNi4yMDkyIDI3LjI2OTggMjUuMjM4MSAyNi42Mjg1IDI0Ljg2NjVDMjQuNTc0NiAyMy42NzkxIDIyLjMwMzQgMjMuMDYxIDIwIDIzLjA2MjVDMTcuNjE1IDIzLjA2MjUgMTUuMzYwNSAyMy43MTM0IDEzLjM3MTUgMjQuODY2NUMxMi43MzAzIDI1LjIzODEgMTIuNjM4IDI2LjIwOTIgMTMuMTQ2NSAyNi43ODg0TDEzLjE4MDMgMjYuODI2OEMxMy41NDAzIDI3LjIzNjggMTQuMDk2IDI3LjMxMzcgMTQuNTU1IDI3LjA1NzRDMTYuMjUwNCAyNi4xMTM0IDE4LjExMjkgMjUuNjIzNCAyMCAyNS42MjVDMjEuOTUzIDI1LjYyNSAyMy44MDI1IDI2LjE0MDEgMjUuNDQ1IDI3LjA2QzI1LjkwMTggMjcuMzE2MiAyNi40NTc1IDI3LjIzOTQgMjYuODE3NSAyNi44MjY4TDI2Ljg1MzUgMjYuNzg4NFpNMjIuMzg1IDMxLjg3NzVDMjIuODI2IDMxLjM3NTIgMjIuODMwNSAzMC41NDUgMjIuMjk1IDMwLjE4NjJDMjEuNjAwNCAyOS43MTY5IDIwLjgwNzcgMjkuNDY5IDIwIDI5LjQ2ODdDMTkuMTkyMyAyOS40NjkgMTguMzk5NiAyOS43MTY5IDE3LjcwNSAzMC4xODYyQzE3LjE2OTUgMzAuNTQ1IDE3LjE3NCAzMS4zNzUyIDE3LjYxNSAzMS44Nzc1TDE5LjIwMzUgMzMuNjg2NkMxOS40MTQ1IDMzLjkyNjggMTkuNzAwNiAzNC4wNjE4IDE5Ljk5ODkgMzQuMDYxOEMyMC4yOTcyIDM0LjA2MTggMjAuNTgzMyAzMy45MjY4IDIwLjc5NDMgMzMuNjg2NkwyMi4zODUgMzEuODc3NVoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="
+                                                                class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
+                                                                alt="Marker" tabindex="0" role="button"
+                                                                style="margin-left: 0px; margin-top: 0px; width: 32px; height: 32px; transform: translate3d(905px, 250px, 0px); z-index: 250;"><img
+                                                                src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNDAgNDEiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjIwIiBmaWxsPSIjN0I0NkQxIi8+CjxwYXRoIGQ9Ik0yMS41OTA3IDYuNzE4NzZDMjEuMTY4OCA2LjM3ODk2IDIwLjU5NjYgNi4xODgwOCAyMCA2LjE4ODA4QzE5LjQwMzQgNi4xODgwOCAxOC44MzEyIDYuMzc4OTYgMTguNDA5MiA2LjcxODc2TDMuNDUzNDkgMTguNzY0NkMzLjM0ODg5IDE4Ljg0ODkgMy4yNjU5MiAxOC45NDg5IDMuMjA5MzEgMTkuMDU5QzMuMTUyNyAxOS4xNjkxIDMuMTIzNTcgMTkuMjg3MSAzLjEyMzU3IDE5LjQwNjNDMy4xMjM1NyAxOS41MjU0IDMuMTUyNyAxOS42NDM0IDMuMjA5MzEgMTkuNzUzNUMzLjI2NTkyIDE5Ljg2MzYgMy4zNDg4OSAxOS45NjM2IDMuNDUzNDkgMjAuMDQ3OUMzLjY2NDczIDIwLjIxODEgMy45NTEyNCAyMC4zMTM2IDQuMjQ5OTkgMjAuMzEzNkM0LjM5NzkxIDIwLjMxMzYgNC41NDQzOSAyMC4yOTAyIDQuNjgxMDUgMjAuMjQ0NkM0LjgxNzcxIDIwLjE5OSA0Ljk0MTg5IDIwLjEzMjEgNS4wNDY0OSAyMC4wNDc5TDIwIDguMDAwMTlMMzQuOTUzNSAyMC4wNDc5QzM1LjE2NDcgMjAuMjE4MSAzNS40NTEyIDIwLjMxMzYgMzUuNzUgMjAuMzEzNkMzNi4wNDg3IDIwLjMxMzYgMzYuMzM1MiAyMC4yMTgxIDM2LjU0NjUgMjAuMDQ3OUMzNi43NTc3IDE5Ljg3NzcgMzYuODc2NCAxOS42NDY5IDM2Ljg3NjQgMTkuNDA2M0MzNi44NzY0IDE5LjE2NTYgMzYuNzU3NyAxOC45MzQ4IDM2LjU0NjUgMTguNzY0NkwzMS4yNSAxNC40OTk4VjguNTMxMjZDMzEuMjUgOC4yOTA5IDMxLjEzMTUgOC4wNjAzOSAzMC45MjA1IDcuODkwNDRDMzAuNzA5NSA3LjcyMDQ5IDMwLjQyMzQgNy42MjUwMSAzMC4xMjUgNy42MjUwMUgyNy44NzVDMjcuNTc2NiA3LjYyNTAxIDI3LjI5MDUgNy43MjA0OSAyNy4wNzk1IDcuODkwNDRDMjYuODY4NSA4LjA2MDM5IDI2Ljc1IDguMjkwOSAyNi43NSA4LjUzMTI2VjEwLjg3NDhMMjEuNTkwNyA2LjcxODc2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTIwIDkuOTY4NTdMMzMuNSAyMC44NDM2VjI4LjQ2ODhDMzMuNSAyOS4xODk4IDMzLjE0NDQgMjkuODgxMyAzMi41MTE1IDMwLjM5MTJDMzEuODc4NiAzMC45MDExIDMxLjAyMDEgMzEuMTg3NSAzMC4xMjUgMzEuMTg3NUg5Ljg3NUM4Ljk3OTg5IDMxLjE4NzUgOC4xMjE0NSAzMC45MDExIDcuNDg4NTEgMzAuMzkxMkM2Ljg1NTU4IDI5Ljg4MTMgNi41IDI5LjE4OTggNi41IDI4LjQ2ODhWMjAuODQzNkwyMCA5Ljk2ODU3WiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg=="
+                                                                class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive"
+                                                                alt="Marker" tabindex="0" role="button"
+                                                                style="margin-left: -20px; margin-top: -20px; width: 32px; height: 32px; transform: translate3d(1472px, 597px, 0px); z-index: 597;">
                                                         </div>
+                                                        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                                                        <div class="leaflet-pane leaflet-popup-pane"></div>
+                                                        <div class="leaflet-proxy leaflet-zoom-animated"
+                                                             style="transform: translate3d(534239px, 780481px, 0px) scale(4096);"></div>
                                                     </div>
-                                                    <div class="leaflet-top leaflet-right"></div>
-                                                    <div class="leaflet-bottom leaflet-left"></div>
-                                                    <div class="leaflet-bottom leaflet-right">
-                                                        <div class="leaflet-control-attribution leaflet-control"><a
-                                                                href="https://leafletjs.com/"
-                                                                title="A JavaScript library for interactive maps">
-                                                            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                                 width="12" height="8" viewBox="0 0 12 8"
-                                                                 class="leaflet-attribution-flag">
-                                                                <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
-                                                                <path fill="#FFD500" d="M0 4h12v3H0z"></path>
-                                                                <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
-                                                            </svg>
-                                                            Leaflet</a> <span aria-hidden="true">|</span> Map data © <a
-                                                                href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
-                                                            contributors
+                                                    <div class="leaflet-control-container">
+                                                        <div class="leaflet-top leaflet-left">
+                                                            <div class="leaflet-control-zoom leaflet-bar leaflet-control"><a
+                                                                    class="leaflet-control-zoom-in"
+                                                                    href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
+                                                                    title="Zoom in" role="button" aria-label="Zoom in"
+                                                                    aria-disabled="false"><span aria-hidden="true">+</span></a><a
+                                                                    class="leaflet-control-zoom-out"
+                                                                    href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc#"
+                                                                    title="Zoom out" role="button" aria-label="Zoom out"
+                                                                    aria-disabled="false"><span aria-hidden="true">−</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="leaflet-top leaflet-right"></div>
+                                                        <div class="leaflet-bottom leaflet-left"></div>
+                                                        <div class="leaflet-bottom leaflet-right">
+                                                            <div class="leaflet-control-attribution leaflet-control"><a
+                                                                    href="https://leafletjs.com/"
+                                                                    title="A JavaScript library for interactive maps">
+                                                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                                                     width="12" height="8" viewBox="0 0 12 8"
+                                                                     class="leaflet-attribution-flag">
+                                                                    <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
+                                                                    <path fill="#FFD500" d="M0 4h12v3H0z"></path>
+                                                                    <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
+                                                                </svg>
+                                                                Leaflet</a> <span aria-hidden="true">|</span> Map data © <a
+                                                                    href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>
+                                                                contributors
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+
+
+                                            <turbo-frame id="document_data">
+                                                <a class="mt-4 underline block text-blue-600 dark:text-blue-500 hover:underline"
+                                                   data-turbo-frame="document_data"
+                                                   href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc?show_document_data=true">View
+                                                    Document Data</a>
+
+                                            </turbo-frame>
                                         </div>
-
-
-                                        <turbo-frame id="document_data">
-                                            <a class="mt-4 underline block text-blue-600 dark:text-blue-500 hover:underline"
-                                               data-turbo-frame="document_data"
-                                               href="https://portal.staging.trusona.com/identity_verifications/4edd0de1-3012-48c3-8072-6373409fa5dc?show_document_data=true">View
-                                                Document Data</a>
-
-                                        </turbo-frame>
                                     </div>
                                 </div>
                             </div>
